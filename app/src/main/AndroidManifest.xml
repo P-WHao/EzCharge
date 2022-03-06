@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="my.edu.tarc.ezcharge">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EzCharge">
+        <activity
+            android:name=".Location.TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Charging.ChargingGuidelinesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Rewards.RewardsFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Pay_TopUp.PayTopUpFragment"
+            android:exported="false" />
+        <activity
+            android:name=".More.MoreFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Location.LocationFragment"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.EzCharge.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

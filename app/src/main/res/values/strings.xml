@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">EzCharge</string>
+
+    <!--    Navigation Menu Bar String-->
+    <string name="nav_home">Home</string>
+    <string name="nav_pay">Pay</string>
+    <string name="nav_redeem">Rewards</string>
+    <string name="nav_menu">More</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
