@@ -11,21 +11,27 @@ import my.edu.tarc.ezcharge.Charging.ChargingGuidelinesActivity
 import my.edu.tarc.ezcharge.databinding.FragmentLocationBinding
 
 class LocationFragment : Fragment() {
+    //binding
+    private lateinit var binding : FragmentLocationBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentLocationBinding.inflate(layoutInflater)
-
+        //Write your fragment code below
+        //This is the button when click then go to charging screen
         binding.buttonStartCharge.setOnClickListener{
             val intent= Intent (this@LocationFragment.requireContext(), ChargingGuidelinesActivity::class.java)
             startActivity(intent)
         }
 
+        //Write your fragment code below
+
+
         return binding.root
     }
 }
 
-//or
 
+//or //Left it
 //package my.edu.tarc.ezcharge.Location
 //
 //import android.content.Context

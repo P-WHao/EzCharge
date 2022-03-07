@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import my.edu.tarc.ezcharge.R
+import my.edu.tarc.ezcharge.databinding.ActivityChargingGuidelinesBinding
 
 class ChargingGuidelinesActivity : AppCompatActivity() {
+    //binding
+    private lateinit var binding: ActivityChargingGuidelinesBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_charging_guidelines)
+        binding = ActivityChargingGuidelinesBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val button: Button = findViewById(R.id.button)
+        //Write your code below
 
 
     }

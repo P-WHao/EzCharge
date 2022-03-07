@@ -30,13 +30,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="157dp"
-        android:text="Button"
-        app:layout_constraintTop_toTopOf="@+id/buttonStartCharge"
-        tools:layout_editor_absoluteX="98dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
