@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--    Navigation menu bar background color-->
     <solid android:color="@color/blue_light"/>
 
-    <!--    Top Left Right Radius (Need check why hover will over hover)-->
     <corners
         android:radius="10000dp"/>
 </shape>
