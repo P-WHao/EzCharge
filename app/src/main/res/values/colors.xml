@@ -9,9 +9,16 @@
     <color name="white">#FFFFFFFF</color>
 
     <!--    Navigation Menu Bar-->
-    <color name="blue_light">#009EE6</color>
+    <color name="blue_a400">#00B0FF</color>
 
     <!--    Fragment Default-->
     <color name="grey_light">#9CA0A2</color>
 
+    <!--    Guidelines Color-->
+    <color name="grey_800">#424242</color>
+    <color name="blue_a100">#80D8FF</color>
+    <color name="amber_a400">#FFC400</color>
+
+    <!--    Charging Scanner Color-->
+    <color name="gray_800">#424242</color>
 </resources>

@@ -26,4 +26,7 @@
     <string name="guide_check_box_tick">I hereby agree to and accept the EzCharge station safety guidelines govering my use of the EzCharge app at EzCharge station.</string>
     <string name="guide_button_i_accept">CONTINUE</string>
 
+    <!--    Charging Scan String-->
+    <string name="scan_default">Scan something....</string>
+    <string name="ask_camera_permission">You need the camera permission to be able to use this app!</string>
 </resources>

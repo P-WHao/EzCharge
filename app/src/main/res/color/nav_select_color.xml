@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--    If selected color-->
-    <item android:color="@color/blue_light" android:state_selected="true"/>
+    <item android:color="@color/blue_a400" android:state_selected="true"/>
     <item android:color="@color/grey_light" android:state_selected="false"/>
 
 </selector>
