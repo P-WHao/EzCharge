@@ -7,5 +7,23 @@
     <string name="nav_redeem">Rewards</string>
     <string name="nav_menu">More</string>
 
+    <!--    Numbering String-->
+    <string name="num_one">1</string>
+    <string name="num_two">2</string>
+    <string name="num_three">3</string>
+    <string name="num_four">4</string>
+
+    <!--    Charging Guidelines String-->
+    <string name="guide_icon">EZCHARGE</string>
+    <string name="guide_header">Station Safety Guidelines</string>
+    <string name="guide_notes">Please follow the safety guidelines below when you are charging your vehicle</string>
+    <string name="guide_for_car">For Car Drivers</string>
+    <string name="guide_for_car_note1">Part at EzCharge enabled charging station.</string>
+    <string name="guide_for_car_note2">Launch EzCharge app.</string>
+    <string name="guide_for_car_note3">Scan QR code accordingly, select charging connector, and select charge amount.</string>
+    <string name="guide_for_car_note4">Once charging connector is ready, put away your phone and step out to recharge.</string>
+    <string name="guide_for_car_info">Do not use your phone while charging.</string>
+    <string name="guide_check_box_tick">I hereby agree to and accept the EzCharge station safety guidelines govering my use of the EzCharge app at EzCharge station.</string>
+    <string name="guide_button_i_accept">CONTINUE</string>
 
 </resources>

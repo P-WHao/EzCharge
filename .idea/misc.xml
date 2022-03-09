@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/drawable/circle.xml" value="0.394" />
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/drawable/ic_baseline_crop_free_24.xml" value="0.294" />
+        <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/drawable/ic_baseline_electric_bolt_24.xml" value="0.394" />
+        <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/drawable/ic_baseline_one_foreground.xml" value="0.394" />
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/drawable/rounded.xml" value="0.294" />
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/layout/activity_charging_guidelines.xml" value="0.4041666666666667" />
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/layout/activity_location_fragment.xml" value="0.4041666666666667" />
@@ -11,6 +14,7 @@
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/layout/activity_more_fragment.xml" value="0.4041666666666667" />
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/layout/activity_pay_top_up_fragment.xml" value="0.4041666666666667" />
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/layout/activity_rewards_fragment.xml" value="0.4041666666666667" />
+        <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/layout/activity_term_ncon.xml" value="0.4041666666666667" />
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/layout/charging_guidelines.xml" value="0.4041666666666667" />
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/layout/fragment_location.xml" value="0.39010416666666664" />
         <entry key="..\:/6. Education (TARC)/2. Degree/1. TARUC (RSF) (YEAR 2) DEGREE/TARUC 2021 (Y2S3)/Mobile Application Development/Assignment/EzCharge/app/src/main/res/layout/fragment_more.xml" value="0.4041666666666667" />

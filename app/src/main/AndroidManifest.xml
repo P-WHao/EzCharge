@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
-        <activity
-            android:name=".Location.TestActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Charging.ChargingGuidelinesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.EzCharge.NoActionBar"
+            />
         <activity
             android:name=".Rewards.RewardsFragment"
             android:exported="false" />
