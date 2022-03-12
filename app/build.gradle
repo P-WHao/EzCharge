@@ -48,7 +48,8 @@ dependencies {
     //QR Code Library
     implementation 'com.github.yuriy-budiyev:code-scanner:2.1.2'
 
-
+    //Card View
+    implementation "androidx.cardview:cardview:1.0.0"
     //Animation - Menu Navigation bar
     //implementation 'com.google.android.material:material:1.0.0'
     //no need already cause already have 'com.google.android.material:material:1.5.0'

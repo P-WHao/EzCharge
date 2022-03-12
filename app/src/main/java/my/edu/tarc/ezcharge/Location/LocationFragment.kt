@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import my.edu.tarc.ezcharge.Charging.ChargingGuidelinesActivity
+import my.edu.tarc.ezcharge.Charging.ChargingPumpActivity
 import my.edu.tarc.ezcharge.Charging.ChargingScanActivity
 import my.edu.tarc.ezcharge.databinding.FragmentLocationBinding
 
@@ -20,7 +21,7 @@ class LocationFragment : Fragment() {
         //Write your fragment code below
         //This is the button when click then go to charging screen
         binding.buttonStartCharge.setOnClickListener{
-            val intent= Intent (this@LocationFragment.requireContext(), ChargingScanActivity::class.java)
+            val intent= Intent (this@LocationFragment.requireContext(), ChargingPumpActivity::class.java)
             startActivity(intent)
         }
 

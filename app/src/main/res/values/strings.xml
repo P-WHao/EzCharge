@@ -29,4 +29,23 @@
     <!--    Charging Scan String-->
     <string name="scan_default">Scan something....</string>
     <string name="ask_camera_permission">You need the camera permission to be able to use this app!</string>
+
+    <!--    Charging Pump String-->
+    <string name="charging_location">Station Kepong</string>
+    <string name="charging_pump">PUMP</string>
+    <string name="charging_duration_title">How Long Do You Want To Charge</string>
+    <string name="decrement_time">-</string>
+    <string name="increment_time">+</string>
+    <string name="charging_duration_minute30">30</string>
+    <string name="charging_duration_minute">minutes</string>
+    <string name="charging_connector">Connector</string>
+
+    <string name="charging_start">Start Time</string>
+    <string name="charging_end">End Time</string>
+    <string name="charging_duration">Duration</string>
+    <string name="charging_distance">Distance</string>
+    <string name="charging_pricing">Price</string>
+    <string name="charging_null">- - -</string>
+    <string name="charging_to_pay">PAY</string>
+
 </resources>

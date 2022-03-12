@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="my.edu.tarc.ezcharge"
-
     xmlns:tools="http://schemas.android.com/tools"
+    package="my.edu.tarc.ezcharge"
     tools:ignore="LockedOrientationActivity">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -15,18 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
         <activity
-            android:name=".Charging.ChargingGuidelinesActivity"
+            android:name=".Charging.ChargingPumpActivity"
             android:exported="false"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+        <activity
+            android:name=".Charging.ChargingGuidelinesActivity"
+            android:exported="false"
             android:parentActivityName=".Location.LocationFragment"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingScanActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
             android:parentActivityName=".Charging.ChargingGuidelinesActivity"
-            android:theme="@style/Theme.EzCharge.NoActionBar"/>
-
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Rewards.RewardsFragment"
             android:exported="false" />
