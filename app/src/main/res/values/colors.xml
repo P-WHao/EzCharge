@@ -21,4 +21,9 @@
 
     <!--    Charging Scanner Color-->
     <color name="gray_800">#424242</color>
+
+    <color name="testing">#99000000</color>
+
+    <!--    Charging Status Color-->
+    <color name="gray_400">#BDBDBD</color>
 </resources>

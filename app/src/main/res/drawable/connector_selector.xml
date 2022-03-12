@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/white" android:state_checked="false"/>
-    <item android:drawable="@color/black" android:state_checked="true"/>
+    <item android:state_checked="true" android:state_window_focused="false"
+        android:drawable="@color/black" />
+    <item android:state_checked="false" android:state_window_focused="false"
+        android:drawable="@drawable/chademo" />
+
+    <item android:state_checked="true" android:state_pressed="true"
+        android:drawable="@color/black" />
+    <item android:state_checked="false" android:state_pressed="true"
+        android:drawable="@drawable/chademo" />
+
+    <item android:state_checked="true" android:state_focused="true"
+        android:drawable="@color/black" />
+    <item android:state_checked="false" android:state_focused="true"
+        android:drawable="@drawable/chademo" />
+
+    <item android:state_checked="false" android:drawable="@drawable/chademo" />
+    <item android:state_checked="true" android:drawable="@color/testing" />
 </selector>
