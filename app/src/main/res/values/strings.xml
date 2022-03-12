@@ -60,4 +60,10 @@
     <string name="pin_not_match">PIN not match please try again</string>
     <string name="charging_pin_enter">Enter PIN To Continue</string>
 
+    <!--    Charging Pin String-->
+    <string name="charging_status">Charging Status</string>
+    <string name="charging_status_EzCharge">EzCharge Station</string>
+    <string name="charging_status_finish">Finish At</string>
+    <string name="charging_status_stop">STOP</string>
+    <string name="charging_status_done">DONE</string>
 </resources>
