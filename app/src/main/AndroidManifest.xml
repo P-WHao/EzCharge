@@ -14,10 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
         <activity
+            android:name=".Charging.ChargingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Charging.ChargingPinActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+        <activity
             android:name=".Charging.ChargingPumpActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingGuidelinesActivity"
             android:exported="false"

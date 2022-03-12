@@ -8,10 +8,17 @@
     <string name="nav_menu">More</string>
 
     <!--    Numbering String-->
+    <string name="num_zero">0</string>
     <string name="num_one">1</string>
     <string name="num_two">2</string>
     <string name="num_three">3</string>
     <string name="num_four">4</string>
+    <string name="num_five">5</string>
+    <string name="num_six">6</string>
+    <string name="num_seven">7</string>
+    <string name="num_eight">8</string>
+    <string name="num_nine">9</string>
+    <string name="num_clear">Clear</string>
 
     <!--    Charging Guidelines String-->
     <string name="guide_icon">EZCHARGE</string>
@@ -39,7 +46,7 @@
     <string name="charging_duration_minute30">30</string>
     <string name="charging_duration_minute">minutes</string>
     <string name="charging_connector">Connector</string>
-
+    <!--    TODO Charging TYPEs-->
     <string name="charging_start">Start Time</string>
     <string name="charging_end">End Time</string>
     <string name="charging_duration">Duration</string>
@@ -47,5 +54,10 @@
     <string name="charging_pricing">Price</string>
     <string name="charging_null">- - -</string>
     <string name="charging_to_pay">PAY</string>
+
+    <!--    Charging Pin String-->
+    <string name="charging_pin">Please enter your 6 digits PIN.</string>
+    <string name="pin_not_match">PIN not match please try again</string>
+    <string name="charging_pin_enter">Enter PIN To Continue</string>
 
 </resources>

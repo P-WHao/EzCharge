@@ -1,5 +1,6 @@
 package my.edu.tarc.ezcharge.Charging
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import my.edu.tarc.ezcharge.R
@@ -32,7 +33,6 @@ class ChargingPumpActivity : AppCompatActivity() {
             }
             binding.chargeValue.text = count.toString()
         }
-
 
     }
 
