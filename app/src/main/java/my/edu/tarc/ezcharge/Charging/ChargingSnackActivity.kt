@@ -1,5 +1,6 @@
 package my.edu.tarc.ezcharge.Charging
 
+import android.content.Intent
 import android.media.metrics.Event
 import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_charging_snack.*
+import kotlinx.android.synthetic.main.activity_charging_snack_cart.*
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.adapter.MyDrinkAdapter
 import my.edu.tarc.ezcharge.eventbus.UpdateCartEvent
@@ -69,7 +71,7 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
             }
 
             override fun onCancelled(error: DatabaseError) {
-                drinkLoadListener.onDrinkLoadFailed(error.message)
+                cartLoadListener.onLoadCartFailed(error.message)
             }
 
         })
@@ -105,6 +107,14 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
         val gridLayoutManager = GridLayoutManager(this, 2)
         recycler_drinks.layoutManager = gridLayoutManager
         recycler_drinks.addItemDecoration(SpaceItemDecoration())
+
+        btnCart.setOnClickListener{
+            startActivity(Intent(this, ChargingSnackCartActivity::class.java))
+        }
+
+        imageViewBack!!.setOnClickListener{
+            finish()
+        }
     }
 
     override fun onDrinkLoadSuccess(drinkModelList: List<DrinkModel>?) {

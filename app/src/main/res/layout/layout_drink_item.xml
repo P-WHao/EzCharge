@@ -19,17 +19,8 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:src="@drawable/common_google_signin_btn_icon_dark"/>
-
-        <TextView
-            android:id="@+id/txtPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$1.0"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_gravity="start"/>
 
         <TextView
             android:id="@+id/txtName"
@@ -38,7 +29,18 @@
             android:text="Name of Drink"
             android:textStyle="bold"
             android:textSize="18sp"
+            android:textColor="@color/black"
             android:layout_gravity="start"/>
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RM 1.00"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="start"/>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

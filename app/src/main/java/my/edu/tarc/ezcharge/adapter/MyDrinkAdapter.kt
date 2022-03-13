@@ -59,7 +59,7 @@ class MyDrinkAdapter (
     override fun onBindViewHolder(holder: MyDrinkViewHolder, position: Int) {
         Glide.with(context).load(list[position].image).into(holder.imageView!!)
         holder.txtName!!.text = StringBuilder().append(list[position].name)
-        holder.txtPrice!!.text = StringBuilder("$").append(list[position].price)
+        holder.txtPrice!!.text = StringBuilder("RM ").append(list[position].price)
 
         //Add to cart
         holder.setClickListener(object:IRecyclerClickListener{
