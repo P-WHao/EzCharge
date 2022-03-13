@@ -80,4 +80,16 @@
     <string name="charging_complete_ezchargeNo">EZCHARGE CARD</string>
     <string name="charging_complete_receiptDate">DATE</string>
     <string name="charging_complete_totalPriceBtm">TOTAL</string>
+
+    <!--    Charging EzSnack String-->
+    <string name="charging_ezsnack">EzSnack</string>
+    <string name="charging_ezsnack_location">Get Station Kepong items delivered to you</string>
+    <string name="charging_viewCart">VIEW CART</string>
+
+    <!--    Charging EzSnack String-->
+    <string name="charging_ezsnack_cartTitle">Review your cart</string>
+    <string name="charging_ezsnack_cartNoPlastic">No plastic bag requested +RM 0.20</string>
+    <string name="charging_ezsnack_cartTotalItems">items</string>
+    <string name="charging_ezsnack_cartCheckout">CHECKOUT</string>
+
 </resources>

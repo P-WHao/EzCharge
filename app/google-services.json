@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "392523461937",
+    "project_id": "ezchargeassignment",
+    "storage_bucket": "ezchargeassignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392523461937:android:eea728624c1480956d6c10",
+        "android_client_info": {
+          "package_name": "my.edu.tarc.ezcharge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392523461937-9j26ib3jbrqg9l5krem9runqsb5c4m5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9IoqkOu5kYjtH_qyf4u5FqAtaqgRB2zQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392523461937-9j26ib3jbrqg9l5krem9runqsb5c4m5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

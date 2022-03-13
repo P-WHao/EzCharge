@@ -5,6 +5,7 @@
     tools:ignore="LockedOrientationActivity">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
         <activity
+            android:name=".Charging.ChargingSnackCartActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+        <activity
             android:name=".Charging.ChargingSnackActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingCompleteActivity"
             android:exported="false"
