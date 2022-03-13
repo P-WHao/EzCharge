@@ -34,6 +34,14 @@ class ChargingPumpActivity : AppCompatActivity() {
             binding.chargeValue.text = count.toString()
         }
 
+        binding.buttonPay.setOnClickListener {
+            val intent = Intent(this, ChargingPinActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.imageViewBack.setOnClickListener {
+            finish()
+        }
     }
 
 }

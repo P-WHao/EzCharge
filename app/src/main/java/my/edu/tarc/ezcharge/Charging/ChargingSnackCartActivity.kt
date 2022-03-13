@@ -1,9 +1,14 @@
 package my.edu.tarc.ezcharge.Charging
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -19,7 +24,7 @@ import my.edu.tarc.ezcharge.model.CartModel
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-import java.lang.StringBuilder
+
 
 class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
 
@@ -79,6 +84,31 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
         btnClose!!.setOnClickListener{
             finish()
         }
+
+        buttonPay!!.setOnClickListener {
+            btmUpToPay()
+        }
+
+    }
+
+    private fun btmUpToPay() {
+        val bottomSheetDialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme
+        )
+
+        val bottomSheetView = LayoutInflater.from(applicationContext).inflate(
+            R.layout.activity_charging_plate, findViewById<LinearLayout>(R.id.plateBtmSheet)
+        )
+
+        bottomSheetView.findViewById<View>(R.id.imageViewClosePlate).setOnClickListener{
+            bottomSheetDialog.dismiss()
+        }
+
+        bottomSheetView.findViewById<View>(R.id.buttonToPay).setOnClickListener{
+            startActivity(Intent(this, ChargingPinActivity::class.java))
+        }
+
+        bottomSheetDialog.setContentView(bottomSheetView)
+        bottomSheetDialog.show()
     }
 
     override fun onLoadCartSuccess(cartModelList: List<CartModel>){

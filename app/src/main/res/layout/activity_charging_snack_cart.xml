@@ -247,7 +247,10 @@
             android:paddingEnd="8dp">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonPay"
+                android:backgroundTint="@color/blue_a400"
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"

@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
-            android:layout_height="90dp"
+            android:layout_height="110dp"
             android:layout_weight="1"
             android:src="@drawable/common_google_signin_btn_icon_dark"/>
 
@@ -40,6 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="start"
+                    android:layout_marginTop="15dp"
                     android:text="Name"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -49,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txtName"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="15dp"
                     android:gravity="start"
                     android:text="RM" />
 
@@ -59,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txtName"
                     android:layout_marginStart="15dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="15dp"
                     android:layout_toEndOf="@+id/txtPrice"
                     android:src="@drawable/ic_baseline_delete_24" />
 

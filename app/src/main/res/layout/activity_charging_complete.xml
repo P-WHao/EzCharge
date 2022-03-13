@@ -310,9 +310,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
         android:text="@string/charging_null"
-        app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/black"
         android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewReceiptDate" />
 
     <View
@@ -326,5 +326,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewWalletBalance" />
+
+    <TextView
+        android:id="@+id/textViewPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/charging_complete_pointTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@+id/textViewReceiptDate" />
+
+    <TextView
+        android:id="@+id/textViewPointResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/charging_null"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptDateResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewReceiptDateResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

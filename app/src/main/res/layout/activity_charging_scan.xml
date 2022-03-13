@@ -31,5 +31,17 @@
         android:textColor="@color/black"
         android:textSize="14sp" />
 
+    <Button
+        android:id="@+id/buttonProceed"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewChargingScan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/blue_a400"
+        android:text="@string/scan_proceed"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
 
 </RelativeLayout>

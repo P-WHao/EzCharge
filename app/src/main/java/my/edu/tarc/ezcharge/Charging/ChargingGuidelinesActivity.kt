@@ -1,5 +1,6 @@
 package my.edu.tarc.ezcharge.Charging
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,7 +17,14 @@ class ChargingGuidelinesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Write your code below
+        binding.buttonAccept.setOnClickListener {
+            val intent = Intent(this, ChargingScanActivity::class.java)
+            startActivity(intent)
+        }
 
+        binding.imageViewCloseButton.setOnClickListener {
+            finish()
+        }
 
     }
 }

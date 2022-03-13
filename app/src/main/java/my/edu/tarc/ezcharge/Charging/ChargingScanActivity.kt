@@ -1,5 +1,6 @@
 package my.edu.tarc.ezcharge.Charging
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -32,6 +33,11 @@ class ChargingScanActivity : AppCompatActivity() {
 
         setupPermission()
         codeScanner()
+
+        binding.buttonProceed.setOnClickListener {
+            val intent = Intent(this, ChargingPumpActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun codeScanner() {

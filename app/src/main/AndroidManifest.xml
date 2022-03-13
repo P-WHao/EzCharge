@@ -14,36 +14,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
+
+        <activity
+            android:name=".Charging.ChargingPlateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Charging.ChargingSnackCartActivity"
+            android:theme="@style/Theme.EzCharge.NoActionBar"/>
         <activity
             android:name=".Charging.ChargingSnackCartActivity"
             android:exported="false"
-            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Charging.ChargingSnackActivity"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingSnackActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Charging.ChargingSnackSelectorActivity"
             android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingCompleteActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Charging.ChargingPinActivity"
             android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingPinActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingPumpActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.EzCharge.NoActionBar" />
-        <activity
-            android:name=".Charging.ChargingGuidelinesActivity"
-            android:exported="false"
-            android:parentActivityName=".Location.LocationFragment"
-            android:screenOrientation="portrait"
+            android:parentActivityName=".Charging.ChargingScanActivity"
             android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingScanActivity"
@@ -51,6 +61,17 @@
             android:parentActivityName=".Charging.ChargingGuidelinesActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".Charging.ChargingGuidelinesActivity"
+            android:exported="false"
+            android:parentActivityName=".Charging.ChargingSnackSelectorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".Charging.ChargingSnackSelectorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar"/>
         <activity
             android:name=".Rewards.RewardsFragment"
             android:exported="false" />

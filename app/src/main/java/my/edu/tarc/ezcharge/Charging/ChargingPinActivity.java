@@ -12,9 +12,13 @@ import java.util.ArrayList;
 import my.edu.tarc.ezcharge.R;
 public class ChargingPinActivity extends AppCompatActivity implements View.OnClickListener {
 
+    //Testing for 2 activity in 1 activity
+    String platNo = "1";
+
     View dot_1, dot_2, dot_3, dot_4;
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btn_clear;
 
+    View backPin;
     ArrayList<String> number_list = new ArrayList<>();
 
     String passcode = "";
@@ -25,6 +29,15 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charging_pin);
         initializeCom();
+
+        backPin = findViewById(R.id.imageViewBackPin);
+
+        backPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private void initializeCom(){
@@ -145,7 +158,11 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
 
     private void matchPassCode() {
         if(passcode.equals("1234")){ //Here need to integrate with user pin
-            startActivity(new Intent(this, ChargingActivity.class));
+            if(platNo.equals("")){//if null then view go to charging progress bar
+                startActivity(new Intent(this, ChargingActivity.class));
+            }else{//if not null then view go to receipt
+                startActivity(new Intent(this, ChargingCompleteActivity.class));
+            }
         }else{
             Toast.makeText(this, getString(R.string.pin_not_match), Toast.LENGTH_SHORT).show();
         }

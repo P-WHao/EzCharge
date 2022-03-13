@@ -20,6 +20,10 @@
     <string name="num_nine">9</string>
     <string name="num_clear">Clear</string>
 
+    <!--    Charging Snack Selector String-->
+    <string name="toCharge">TO CHARGE</string>
+    <string name="toBuySnack">TO SNACK</string>
+
     <!--    Charging Guidelines String-->
     <string name="guide_icon">EZCHARGE</string>
     <string name="guide_header">Station Safety Guidelines</string>
@@ -36,6 +40,7 @@
     <!--    Charging Scan String-->
     <string name="scan_default">Scan something....</string>
     <string name="ask_camera_permission">You need the camera permission to be able to use this app!</string>
+    <string name="scan_proceed">PROCEED</string>
 
     <!--    Charging Pump String-->
     <string name="charging_location">Station Kepong</string>
@@ -80,6 +85,7 @@
     <string name="charging_complete_ezchargeNo">EZCHARGE CARD</string>
     <string name="charging_complete_receiptDate">DATE</string>
     <string name="charging_complete_totalPriceBtm">TOTAL</string>
+    <string name="charging_complete_pointTitle">POINT EARNED</string>
 
     <!--    Charging EzSnack String-->
     <string name="charging_ezsnack">EzSnack</string>
@@ -91,5 +97,10 @@
     <string name="charging_ezsnack_cartNoPlastic">No plastic bag requested +RM 0.20</string>
     <string name="charging_ezsnack_cartTotalItems">items</string>
     <string name="charging_ezsnack_cartCheckout">CHECKOUT</string>
+
+    <!--    Charging Plate Enter String-->
+    <string name="charging_plate_enter">Vehicle Plate Number</string>
+    <string name="charging_plate_tips">Please provide your vehicle plate number so we can deliver your purchases to you.</string>
+    <string name="charging_plate_hints">Enter Your Plate Number</string>
 
 </resources>
