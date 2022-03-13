@@ -19,7 +19,7 @@ class LocationFragment : Fragment() {
         //Write your fragment code below
         //This is the button when click then go to charging screen
         binding.buttonStartCharge.setOnClickListener{
-            val intent= Intent (this@LocationFragment.requireContext(), ChargingActivity::class.java)
+            val intent= Intent (this@LocationFragment.requireContext(), ChargingPinActivity::class.java)
             startActivity(intent)
         }
 

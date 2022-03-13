@@ -14,8 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
         <activity
-            android:name=".Charging.ChargingCompleteActivity"
+            android:name=".Charging.ChargingSnackActivity"
             android:exported="false" />
+        <activity
+            android:name=".Charging.ChargingCompleteActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Charging.ChargingActivity"
             android:exported="false"

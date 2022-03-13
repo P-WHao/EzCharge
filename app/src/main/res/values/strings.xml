@@ -66,4 +66,18 @@
     <string name="charging_status_finish">Finish At</string>
     <string name="charging_status_stop">STOP</string>
     <string name="charging_status_done">DONE</string>
+
+    <!--    Charging Complete String-->
+    <string name="charging_complete_title">Charging Completed</string>
+    <string name="charging_complete_product"><u>PRODUCTS / TYPES</u></string>
+    <string name="charging_complete_price"><u>PRICE</u></string>
+    <string name="charging_complete_totalPrice"><u>TOTAL</u></string>
+    <string name="charging_complete_pumpNo">PUMP NUMBER</string>
+    <string name="charging_complete_pumpResult">Pump 1</string>
+    <string name="charging_complete_walletBalance">WALLET BALANCE</string>
+    <string name="charging_complete_locationAddr">Lot 44665 Mukim Batu, Kepong, Bandar Menjalara, 52200 Kuala Lumpur</string>
+    <string name="charging_complete_receiptNo">RECEIPT NO</string>
+    <string name="charging_complete_ezchargeNo">EZCHARGE CARD</string>
+    <string name="charging_complete_receiptDate">DATE</string>
+    <string name="charging_complete_totalPriceBtm">TOTAL</string>
 </resources>
