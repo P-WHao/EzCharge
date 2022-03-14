@@ -86,7 +86,8 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true">
 
                 <ImageView
                     android:id="@+id/cartButton"
@@ -99,8 +100,7 @@
                     android:id="@+id/badge"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginStart="25dp"
-                    />
+                    android:layout_marginStart="25dp" />
             </FrameLayout>
 
             <TextView
