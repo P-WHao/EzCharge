@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Charging.ChargingPumpActivity"
+    tools:context=".PumpCharging.ChargingPumpActivity"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -21,6 +21,7 @@
         android:layout_gravity="center">
 
         <TextView
+            android:id="@+id/stationName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/charging_location"
@@ -66,6 +67,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/stationPumpNo"
                     android:layout_width="60dp"
                     android:layout_height="65dp"
                     android:layout_alignParentEnd="true"
@@ -223,7 +225,7 @@
                         android:id="@+id/radioButtonType1"
                         android:layout_width="65dp"
                         android:layout_height="match_parent"
-                        android:drawableTop="@drawable/connector_selector"
+                        android:background="@drawable/connector_selector"
                         android:text="hello"
                         android:button="@null" />
 
@@ -288,13 +290,14 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/startTimeResult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/charging_null"
-                    android:textSize="14sp"
                     android:layout_alignParentEnd="true"
+                    android:text="@string/charging_null"
                     android:textColor="@color/white"
-                    android:textStyle="bold"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/endTime"
@@ -308,14 +311,15 @@
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:layout_below="@+id/startTime"
+                    android:id="@+id/endTimeResult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/charging_null"
-                    android:textSize="14sp"
+                    android:layout_below="@+id/startTime"
                     android:layout_alignParentEnd="true"
+                    android:text="@string/charging_null"
                     android:textColor="@color/white"
-                    android:textStyle="bold"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/durationTime"
@@ -329,14 +333,15 @@
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:layout_below="@+id/endTime"
+                    android:id="@+id/durationTimeResult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/charging_null"
-                    android:textSize="14sp"
+                    android:layout_below="@+id/endTime"
                     android:layout_alignParentEnd="true"
+                    android:text="@string/zero_minute"
                     android:textColor="@color/white"
-                    android:textStyle="bold"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/distanceTime"
@@ -350,21 +355,22 @@
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:layout_below="@+id/durationTime"
+                    android:id="@+id/distanceTimeResult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/charging_null"
-                    android:textSize="14sp"
+                    android:layout_below="@+id/durationTime"
                     android:layout_alignParentEnd="true"
+                    android:text="@string/zero_km"
                     android:textColor="@color/white"
-                    android:textStyle="bold"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/divider"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:layout_marginTop="2dp"
                     android:layout_below="@+id/distanceTime"
+                    android:layout_marginTop="2dp"
                     android:background="?android:attr/listDivider" />
 
                 <TextView
@@ -380,12 +386,13 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/priceTimeResult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
                     android:layout_below="@+id/distanceTime"
                     android:layout_alignParentEnd="true"
-                    android:text="@string/charging_null"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/zero_price"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />

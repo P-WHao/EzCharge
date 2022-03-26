@@ -1,12 +1,8 @@
-package my.edu.tarc.ezcharge.Charging
+package my.edu.tarc.ezcharge.PumpCharging
 
 import android.content.Intent
-import android.media.metrics.Event
-import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.GridLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DataSnapshot
@@ -14,7 +10,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_charging_snack.*
-import kotlinx.android.synthetic.main.activity_charging_snack_cart.*
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.adapter.MyDrinkAdapter
 import my.edu.tarc.ezcharge.eventbus.UpdateCartEvent

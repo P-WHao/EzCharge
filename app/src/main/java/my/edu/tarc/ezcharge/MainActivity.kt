@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private val payTopUpFragment = PayTopUpFragment()
     private val rewardsFragment = RewardsFragment()
     private val moreFragment = MoreFragment()
+    private var login :String = "0"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +29,8 @@ class MainActivity : AppCompatActivity() {
 
 //        //when user open app
 //        //add (use intent to check whether user login)
-//        if(login == "null"){
-//            val intent = Intent(this, LoginActivity::class.java)
+//        if(login == "0"){
+//            val intent = Intent(this, ChargingActivity::class.java)
 //            startActivity(intent)
 //            //finishAffinity()
 //        }else{

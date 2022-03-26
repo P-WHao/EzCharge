@@ -5,7 +5,7 @@
     android:id="@+id/chargingSnackLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Charging.ChargingSnackActivity">
+    tools:context=".PumpCharging.ChargingSnackActivity">
 
     <LinearLayout
         android:id="@+id/back"

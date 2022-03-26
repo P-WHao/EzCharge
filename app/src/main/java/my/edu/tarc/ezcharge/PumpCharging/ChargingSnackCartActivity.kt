@@ -1,4 +1,4 @@
-package my.edu.tarc.ezcharge.Charging
+package my.edu.tarc.ezcharge.PumpCharging
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

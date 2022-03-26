@@ -1,9 +1,8 @@
-package my.edu.tarc.ezcharge.Charging;
+package my.edu.tarc.ezcharge.PumpCharging;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Context;
+
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,15 +10,28 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import my.edu.tarc.ezcharge.R;
 public class ChargingPinActivity extends AppCompatActivity implements View.OnClickListener {
+//TO DO
+    //Get wallet balance
+    //Deduce the wallet balance
+    //If insufficient then terminate, back to home
+
+    //Get wallet pin number
+    //Match then paid
 
     //Testing for 2 activity in 1 activity
-    String platNo = "1";
+    //String platNo = "1";
+
+    //Wallet Amount
+    Double walletAmount = 300.00;
 
     View dot_1, dot_2, dot_3, dot_4;
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btn_clear;
 
     View backPin;
     ArrayList<String> number_list = new ArrayList<>();
+
+    String activity = "";
+    Double totalPay = 0.00;
 
     String passcode = "";
     String num_01, num_02, num_03, num_04;
@@ -29,6 +41,10 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charging_pin);
         initializeCom();
+
+        Intent intent = getIntent();
+        activity = intent.getStringExtra(ChargingPumpActivity.EXTRA_ACTIVITY);
+        totalPay = intent.getDoubleExtra(ChargingPumpActivity.EXTRA_PRICE, 0.00);
 
         backPin = findViewById(R.id.imageViewBackPin);
 
@@ -158,10 +174,16 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
 
     private void matchPassCode() {
         if(passcode.equals("1234")){ //Here need to integrate with user pin
-            if(platNo.equals("")){//if null then view go to charging progress bar
-                startActivity(new Intent(this, ChargingActivity.class));
-            }else{//if not null then view go to receipt
-                startActivity(new Intent(this, ChargingCompleteActivity.class));
+            if(walletAmount >= totalPay){
+                walletAmount -= totalPay;
+                if(activity.equals("Charge")){//if null then view go to charging progress bar
+                    Toast.makeText(this, "Paied", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(this, ChargingActivity.class));
+                }else{//if not null then view go to receipt
+                    startActivity(new Intent(this, ChargingCompleteActivity.class));
+                }
+            }else{
+                Toast.makeText(this, getString(R.string.insufficient_money), Toast.LENGTH_SHORT).show();
             }
         }else{
             Toast.makeText(this, getString(R.string.pin_not_match), Toast.LENGTH_SHORT).show();

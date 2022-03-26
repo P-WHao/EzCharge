@@ -20,6 +20,15 @@
     <string name="num_nine">9</string>
     <string name="num_clear">Clear</string>
 
+    <!--    Tost String-->
+    <string name = "not_check">Please Agree with the Rules!! Thanks</string>
+    <string name = "not_code">This is not an EzCharge Station Code</string>
+    <string name = "scan_again">Please Tap the scanner to rescan. Thanks</string>
+
+    <string name="zero_minute">0 Minute</string>
+    <string name="zero_km">0 KM</string>
+    <string name="zero_price">RM 0.00</string>
+
     <!--    Charging Snack Selector String-->
     <string name="toCharge">TO CHARGE</string>
     <string name="toBuySnack">TO SNACK</string>
@@ -63,9 +72,11 @@
     <!--    Charging Pin String-->
     <string name="charging_pin">Please enter your 6 digits PIN.</string>
     <string name="pin_not_match">PIN not match please try again</string>
+    <string name="insufficient_money">Insufficient Money, please top-up</string>
     <string name="charging_pin_enter">Enter PIN To Continue</string>
 
-    <!--    Charging Pin String-->
+    <!--    Charging Status String-->
+    <string name="charging_settle">Charging Completed</string>
     <string name="charging_status">Charging Status</string>
     <string name="charging_status_EzCharge">EzCharge Station</string>
     <string name="charging_status_finish">Finish At</string>

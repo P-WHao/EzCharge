@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Charging.ChargingActivity">
+    tools:context=".PumpCharging.ChargingActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -80,10 +80,10 @@
     <ProgressBar
         android:id="@+id/progress_bar"
         style="@style/CircularDeterminateProgressBar"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_marginTop="24dp"
-        android:progress="60"
+        android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +93,7 @@
         android:id="@+id/textViewProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="60%"
+        android:text="00%"
         android:textSize="40sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
@@ -101,21 +101,21 @@
         app:layout_constraintStart_toStartOf="@+id/progress_bar"
         app:layout_constraintTop_toTopOf="@+id/progress_bar" />
 
-    <Button
-        android:id="@+id/buttonDecr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="- 10%"
-        app:layout_constraintStart_toStartOf="@+id/progress_bar"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+<!--    <Button-->
+<!--        android:id="@+id/buttonDecr"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="- 10%"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/progress_bar"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />-->
 
-    <Button
-        android:id="@+id/buttonIncr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+ 10%"
-        app:layout_constraintEnd_toEndOf="@+id/progress_bar"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+<!--    <Button-->
+<!--        android:id="@+id/buttonIncr"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="+ 10%"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/progress_bar"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />-->
 
     <TextView
         android:id="@+id/textViewDuration"
@@ -194,23 +194,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/blue_a400"
         android:text="@string/charging_status_stop"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider6" />
 
     <View
         android:id="@+id/divider3"
         android:layout_width="409dp"
         android:layout_height="1dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="8dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar"
-        tools:layout_editor_absoluteX="1dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
 
     <View
         android:id="@+id/divider6"

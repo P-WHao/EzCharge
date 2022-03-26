@@ -1,4 +1,4 @@
-package my.edu.tarc.ezcharge.Charging
+package my.edu.tarc.ezcharge.PumpCharging
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -34,10 +34,37 @@ class ChargingScanActivity : AppCompatActivity() {
         setupPermission()
         codeScanner()
 
-        binding.buttonProceed.setOnClickListener {
-            val intent = Intent(this, ChargingPumpActivity::class.java)
-            startActivity(intent)
+        //Call back (Result from decode qr code)
+        codeScanner.decodeCallback = DecodeCallback {
+            runOnUiThread{
+                //binding.textViewChargingScan.text = it.text
+                val textResult = it.text.toString()
+                val textID : TextView = binding.textViewChargingScan
+
+                if(textResult.take(3) == "E-C"){
+                    textID.text = textResult
+                }else{
+                    textID.setText(R.string.not_code)
+                    Toast.makeText(this, getString(R.string.not_code), Toast.LENGTH_SHORT).show()
+                }
+
+                //Button proceed to charging menu
+                binding.buttonProceed.setOnClickListener {
+
+                    if(textResult.take(3) == "E-C"){
+                        val intent = Intent(this, ChargingPumpActivity::class.java)
+                        intent.putExtra("itemCode", textResult)
+                        startActivity(intent)
+                    }else{
+                        Toast.makeText(this, getString(R.string.scan_again), Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
+            }
         }
+
+
     }
 
     private fun codeScanner() {
@@ -55,15 +82,7 @@ class ChargingScanActivity : AppCompatActivity() {
             isAutoFocusEnabled = true
             isFlashEnabled = false
 
-            //Call back (Result from decode qr code)
-            decodeCallback = DecodeCallback {
-                runOnUiThread{
-                    //binding.textViewChargingScan.text = it.text
-                    val textResult = it.text.toString()
-                    val textID : TextView = binding.textViewChargingScan
-                    textID.text = textResult
-                }
-            }
+
 
             //Error call back (When somethings go wrong)
             errorCallback = ErrorCallback {

@@ -1,8 +1,7 @@
-package my.edu.tarc.ezcharge.Charging
+package my.edu.tarc.ezcharge.PumpCharging
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingPlateBinding
 
 class ChargingPlateActivity : AppCompatActivity() {

@@ -1,9 +1,9 @@
-package my.edu.tarc.ezcharge.Charging
+package my.edu.tarc.ezcharge.PumpCharging
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.widget.Toast
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingGuidelinesBinding
 
@@ -16,10 +16,17 @@ class ChargingGuidelinesActivity : AppCompatActivity() {
         binding = ActivityChargingGuidelinesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val isCheck = binding.checkBoxGuidelines
         //Write your code below
         binding.buttonAccept.setOnClickListener {
-            val intent = Intent(this, ChargingScanActivity::class.java)
-            startActivity(intent)
+
+            if(isCheck.isChecked){
+                val intent = Intent(this, ChargingScanActivity::class.java)
+                startActivity(intent)
+            }else{
+                Toast.makeText(this, getString(R.string.not_check), Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         binding.imageViewCloseButton.setOnClickListener {
