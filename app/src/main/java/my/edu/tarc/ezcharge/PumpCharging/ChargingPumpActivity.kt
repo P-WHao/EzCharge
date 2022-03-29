@@ -1,21 +1,17 @@
 package my.edu.tarc.ezcharge.PumpCharging
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import my.edu.tarc.ezcharge.Data.ViewModel.PumpItemViewModel
 import my.edu.tarc.ezcharge.MyApplication
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingPumpBinding
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.LocalTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class ChargingPumpActivity : AppCompatActivity() {
@@ -36,9 +32,14 @@ class ChargingPumpActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+
         super.onCreate(savedInstanceState)
         binding = ActivityChargingPumpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val extras = Bundle()
 
         //Get scanned item id from previous activity
         val itemCode = intent.getStringExtra("itemCode").toString()
@@ -57,10 +58,17 @@ class ChargingPumpActivity : AppCompatActivity() {
         var stationNameR : String = ""
         var stationPumpR : Int = 0
         var stationCableR : String = ""
+        var addTime : Int = 30
+
+        var passName : String =""
+        var passPumpNo : Int = 0
 
         //Get time
         val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
         val currentDateAndTime: String = simpleDateFormat.format(Date())
+
+        val d = simpleDateFormat.parse(currentDateAndTime)
+        val cal = Calendar.getInstance()
 
         //Retrieve scan item from item with view model
             pumpItemViewModel.getScanItem(itemCode).observe(this, { itemList ->
@@ -85,6 +93,8 @@ class ChargingPumpActivity : AppCompatActivity() {
                     stationName.text = stationNameR
                     stationPumpNo.text = itemArray[2]
 
+                    passName = stationNameR
+                    passPumpNo = stationPumpR
 
                 when(stationCableR) {
                     "universal" -> {
@@ -108,9 +118,13 @@ class ChargingPumpActivity : AppCompatActivity() {
                 }
                 }
             })
+        cal.time = d
+        cal.add(Calendar.MINUTE, addTime)
+        val newTime = simpleDateFormat.format(cal.time)
 
         //Default
         binding.startTimeResult.text = currentDateAndTime
+        binding.endTimeResult.text = newTime
         binding.durationTimeResult.text = count.toString() + " Minutes"
         binding.distanceTimeResult.text = distance.toString() + " KM"
         //We set 50km = RM 10.00
@@ -123,8 +137,13 @@ class ChargingPumpActivity : AppCompatActivity() {
                 count+=5
                 distance+=20
                 price+=10
+                addTime+=5
             }
+            cal.time = d
+            cal.add(Calendar.MINUTE, addTime)
+            val newTime = simpleDateFormat.format(cal.time)
             binding.chargeValue.text = count.toString()
+            binding.endTimeResult.text = newTime
             binding.durationTimeResult.text = count.toString() + " Minutes"
             binding.distanceTimeResult.text = distance.toString() + " KM"
             //We set 50km = RM 10.00
@@ -138,8 +157,13 @@ class ChargingPumpActivity : AppCompatActivity() {
                 count-=5
                 distance-=20
                 price-=10
+                addTime-=5
             }
+            cal.time = d
+            cal.add(Calendar.MINUTE, addTime)
+            val newTime = simpleDateFormat.format(cal.time)
             binding.chargeValue.text = count.toString()
+            binding.endTimeResult.text = newTime
             binding.durationTimeResult.text = count.toString() + " Minutes"
             binding.distanceTimeResult.text = distance.toString() + " KM"
             //We set 50km = RM 10.00
@@ -147,10 +171,19 @@ class ChargingPumpActivity : AppCompatActivity() {
         }
 
         binding.buttonPay.setOnClickListener {
+            extras.putDouble("TOTAL_PRICE",price)
+            extras.putInt("DURATION", count)
+            extras.putString("ACTIVITY", "Charge")
+            extras.putString("END_TIME", newTime)
+            extras.putString("LOCATION_NAME", passName)
+            extras.putInt("PUMP_NO", passPumpNo)
             val intent = Intent(this, ChargingPinActivity::class.java)
-            intent.putExtra(EXTRA_PRICE, price)
-            intent.putExtra(EXTRA_ACTIVITY, "Charge")
+            intent.putExtras(extras)
             startActivity(intent)
+            //val intent = Intent(this, ChargingPinActivity::class.java)
+//            intent.putExtra(EXTRA_PRICE, price)
+//            intent.putExtra(EXTRA_ACTIVITY, "Charge")
+//            startActivity(intent)
         }
 
 
@@ -160,9 +193,9 @@ class ChargingPumpActivity : AppCompatActivity() {
         }
     }
 
-    companion object{
-        public const val EXTRA_PRICE = "my.edu.tarc.bmi_calculator.price"
-        public const val EXTRA_ACTIVITY = "my.edu.tarc.bmi_calculator.Charge"
-    }
+//    companion object{
+//        public const val EXTRA_PRICE = "my.edu.tarc.bmi_calculator.price"
+//        public const val EXTRA_ACTIVITY = "my.edu.tarc.bmi_calculator.Charge"
+//    }
 
 }

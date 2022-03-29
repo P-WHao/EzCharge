@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,6 +18,8 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
 
     //Get wallet pin number
     //Match then paid
+
+    Bundle extras = new Bundle();
 
     //Testing for 2 activity in 1 activity
     //String platNo = "1";
@@ -32,6 +35,10 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
 
     String activity = "";
     Double totalPay = 0.00;
+    String endTime = "";
+    int duration = 0;
+    int stationPumpR = 0;
+    String stationNameR = "";
 
     String passcode = "";
     String num_01, num_02, num_03, num_04;
@@ -42,10 +49,19 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_charging_pin);
         initializeCom();
 
+        //get the intent in the target activity
         Intent intent = getIntent();
-        activity = intent.getStringExtra(ChargingPumpActivity.EXTRA_ACTIVITY);
-        totalPay = intent.getDoubleExtra(ChargingPumpActivity.EXTRA_PRICE, 0.00);
 
+        //get the attached bundle from the intent
+        Bundle extras = intent.getExtras();
+
+        //Extracting the stored data from the bundle
+        activity = extras.getString("ACTIVITY");
+        totalPay = extras.getDouble("TOTAL_PRICE");
+        duration = extras.getInt("DURATION");
+        endTime = extras.getString("END_TIME");
+        stationNameR = extras.getString("LOCATION_NAME");
+        stationPumpR = extras.getInt("PUMP_NO");
         backPin = findViewById(R.id.imageViewBackPin);
 
         backPin.setOnClickListener(new View.OnClickListener() {
@@ -177,8 +193,17 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
             if(walletAmount >= totalPay){
                 walletAmount -= totalPay;
                 if(activity.equals("Charge")){//if null then view go to charging progress bar
-                    Toast.makeText(this, "Paied", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this, ChargingActivity.class));
+                    Toast.makeText(this, "Paid", Toast.LENGTH_SHORT).show();
+                    //Pass Value
+                    extras.putDouble("TOTAL_PAY",totalPay);
+                    extras.putString("END_TIME", endTime);
+                    extras.putInt("DURATION", duration);
+                    extras.putString("ACTIVITY", activity);
+                    extras.putString("LOCATION_NAME", stationNameR);
+                    extras.putInt("PUMP_NO", stationPumpR);
+                    Intent intent = new Intent(this, ChargingActivity.class);
+                    intent.putExtras(extras);
+                    startActivity(intent);
                 }else{//if not null then view go to receipt
                     startActivity(new Intent(this, ChargingCompleteActivity.class));
                 }
