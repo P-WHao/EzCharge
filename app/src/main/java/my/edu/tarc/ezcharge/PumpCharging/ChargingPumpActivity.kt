@@ -127,6 +127,7 @@ class ChargingPumpActivity : AppCompatActivity() {
 //                }
                 }
             })
+
         cal.time = d
         cal.add(Calendar.MINUTE, addTime)
         val newTime = simpleDateFormat.format(cal.time)

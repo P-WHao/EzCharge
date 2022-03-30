@@ -200,6 +200,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="8dp"
+        android:tint="@color/blue_a400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewLocationImage"
@@ -245,39 +246,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
 
     <TextView
-        android:id="@+id/textViewReceiptNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/charging_complete_receiptNo"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLocationAddr" />
-
-    <TextView
-        android:id="@+id/textViewReceiptNoResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/charging_null"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewReceiptNo" />
-
-    <TextView
         android:id="@+id/textViewEzChargeNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:text="@string/charging_complete_ezchargeNo"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptNo"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewReceiptNo"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/textViewReceiptDate" />
 
     <TextView
         android:id="@+id/textViewEzChargeNoResult"
@@ -285,23 +262,22 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:text="@string/charging_null"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptNoResult"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewReceiptNoResult"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptDateResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewReceiptDateResult" />
 
     <TextView
         android:id="@+id/textViewReceiptDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:textSize="12sp"
+        android:layout_marginTop="16dp"
         android:text="@string/charging_complete_receiptDate"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewReceiptNoResult" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLocationAddr" />
 
     <TextView
         android:id="@+id/textViewReceiptDateResult"
@@ -328,25 +304,27 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewWalletBalance" />
 
     <TextView
-        android:id="@+id/textViewPoint"
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="@string/charging_complete_pointTitle"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptDate"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/charging_complete_thanks1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="12sp"
-        app:layout_constraintTop_toTopOf="@+id/textViewReceiptDate" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textViewPointResult"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="@string/charging_null"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptDateResult"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/charging_complete_thanks"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewReceiptDateResult" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -92,11 +92,11 @@
     <string name="charging_complete_pumpResult">Pump 1</string>
     <string name="charging_complete_walletBalance">WALLET BALANCE</string>
     <string name="charging_complete_locationAddr">Lot 44665 Mukim Batu, Kepong, Bandar Menjalara, 52200 Kuala Lumpur</string>
-    <string name="charging_complete_receiptNo">RECEIPT NO</string>
     <string name="charging_complete_ezchargeNo">EZCHARGE CARD</string>
     <string name="charging_complete_receiptDate">DATE</string>
     <string name="charging_complete_totalPriceBtm">TOTAL</string>
-    <string name="charging_complete_pointTitle">POINT EARNED</string>
+    <string name="charging_complete_thanks">Thank You</string>
+    <string name="charging_complete_thanks1">Have a Safe Journey</string>
 
     <!--    Charging EzSnack String-->
     <string name="charging_ezsnack">EzSnack</string>

@@ -94,7 +94,7 @@ class ChargingActivity : AppCompatActivity() {
                 Toast.makeText(this@ChargingActivity, "Resume", Toast.LENGTH_SHORT).show()
             }else{
                 binding.buttonStopDone.text = getString(R.string.scan_proceed)
-                Toast.makeText(this@ChargingActivity, getString(R.string.charging_settle), Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@ChargingActivity, getString(R.string.charging_settle), Toast.LENGTH_SHORT).show()
 
                 //Todo
                 //Get charging type and pass also
