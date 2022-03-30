@@ -30,9 +30,16 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
 
     var cartLoadListener: ICartLoadListener?= null
 
+    private var refreshID = ""
+
+    //Get intent from previous activity
+    //private val userID = "1" //Then pass to MyCartAdapter
+//    val userID = intent.getStringExtra("USER_ID").toString()
+
     override fun onStart() {
         super.onStart()
         EventBus.getDefault().register(this)
+
     }
 
     override fun onStop() {
@@ -49,6 +56,8 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val userID = intent.getStringExtra("USER_ID").toString()
+        refreshID = userID
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_charging_snack_cart)
         init()
@@ -57,7 +66,7 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
 
     private fun loadCartFromFirebase() {
         val cartModels : MutableList<CartModel> = ArrayList()
-        FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("Cart").child("UNIQUE_USER_ID").addListenerForSingleValueEvent(object:
+        FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("Cart").child(refreshID).addListenerForSingleValueEvent(object:
             ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for(cartSnapshot in snapshot.children){
@@ -111,13 +120,13 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
         bottomSheetDialog.show()
     }
 
-    override fun onLoadCartSuccess(cartModelList: List<CartModel>){
+    override fun onLoadCartSuccess(cartModelList: List<CartModel>) {
         var sum = 0.00
         for (cartModel in cartModelList!!){
             sum += cartModel!!.totalPrice
         }
         totalPay.text = String.format("%s %.2f", "RM ", sum)
-        val adapter = MyCartAdapter(this, cartModelList)
+        val adapter = MyCartAdapter(this, cartModelList, refreshID)
         recycler_cart!!.adapter = adapter
     }
 

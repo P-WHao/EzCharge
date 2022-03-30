@@ -3,6 +3,8 @@ package my.edu.tarc.ezcharge.PumpCharging
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DataSnapshot
@@ -12,6 +14,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_charging_snack.*
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.adapter.MyDrinkAdapter
+import my.edu.tarc.ezcharge.databinding.ActivityChargingSnackBinding
 import my.edu.tarc.ezcharge.eventbus.UpdateCartEvent
 import my.edu.tarc.ezcharge.listener.ICartLoadListener
 import my.edu.tarc.ezcharge.listener.IDrinkLoadListener
@@ -26,6 +29,10 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
 
     lateinit var drinkLoadListener: IDrinkLoadListener
     lateinit var cartLoadListener: ICartLoadListener
+
+    private lateinit var binding: ActivityChargingSnackBinding
+
+    private var refreshID = ""
 
     override fun onStart() {
         super.onStart()
@@ -46,8 +53,12 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val userID = intent.getStringExtra("USER_ID").toString()
+        refreshID = userID
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_charging_snack)
+        binding = ActivityChargingSnackBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.titleSnack.text = userID
         init()
         loadDrinkFromFireBase()
         countCartFromFireBase()
@@ -55,7 +66,7 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
 
     private fun countCartFromFireBase() {
         val cartModels : MutableList<CartModel> = ArrayList()
-        FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("Cart").child("UNIQUE_USER_ID").addListenerForSingleValueEvent(object:ValueEventListener{
+        FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("Cart").child(refreshID).addListenerForSingleValueEvent(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 for(cartSnapshot in snapshot.children){
                     val cartModel = cartSnapshot.getValue(CartModel::class.java)
@@ -104,7 +115,11 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
         recycler_drinks.addItemDecoration(SpaceItemDecoration())
 
         btnCart.setOnClickListener{
-            startActivity(Intent(this, ChargingSnackCartActivity::class.java))
+            //pass intent (userID) to next activity
+            val intent = Intent(this, ChargingSnackCartActivity::class.java)
+            intent.putExtra("USER_ID", refreshID)
+            startActivity(intent)
+            //startActivity(Intent(this, ChargingSnackCartActivity::class.java))
         }
 
         imageViewBack!!.setOnClickListener{
@@ -113,7 +128,7 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
     }
 
     override fun onDrinkLoadSuccess(drinkModelList: List<DrinkModel>?) {
-        val adapter = MyDrinkAdapter(this, drinkModelList!!, cartLoadListener)
+        val adapter = MyDrinkAdapter(this, drinkModelList!!, cartLoadListener, refreshID)
         recycler_drinks.adapter = adapter
     }
 

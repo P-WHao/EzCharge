@@ -32,6 +32,7 @@
     <!--    Charging Snack Selector String-->
     <string name="toCharge">TO CHARGE</string>
     <string name="toBuySnack">TO SNACK</string>
+    <string name="toContinueCharge"><u>Tap to Continue</u></string>
 
     <!--    Charging Guidelines String-->
     <string name="guide_icon">EZCHARGE</string>

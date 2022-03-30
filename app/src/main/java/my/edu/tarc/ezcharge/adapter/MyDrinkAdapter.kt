@@ -23,33 +23,36 @@ import org.greenrobot.eventbus.EventBus
 
 class MyDrinkAdapter (
     private val context: Context,
-    private val list:List<DrinkModel>, private val cartListener: ICartLoadListener): RecyclerView.Adapter<MyDrinkAdapter.MyDrinkViewHolder>(){
+    private val list:List<DrinkModel>, private val cartListener: ICartLoadListener, private val userId: String): RecyclerView.Adapter<MyDrinkAdapter.MyDrinkViewHolder>(){
 
-        class MyDrinkViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-            var imageView:ImageView?=null
-            var txtName:TextView?=null
-            var txtPrice:TextView?=null
+    //Get userID from previous activity then pass in
+    private val userID = userId
 
-            private var clickListener:IRecyclerClickListener? = null
+    class MyDrinkViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+        var imageView:ImageView?=null
+        var txtName:TextView?=null
+        var txtPrice:TextView?=null
 
-            fun setClickListener(clickListener: IRecyclerClickListener){
-                this.clickListener = clickListener
-            }
+        private var clickListener:IRecyclerClickListener? = null
 
-            init{
-                imageView = itemView.findViewById(R.id.imageView) as ImageView
-                txtName = itemView.findViewById(R.id.txtName) as TextView
-                txtPrice = itemView.findViewById(R.id.txtPrice) as TextView
-
-                //tap on item
-                itemView.setOnClickListener(this)
-            }
-
-            override fun onClick(v: View?){
-                clickListener!!.onItemClickListener(v, adapterPosition)
-            }
-
+        fun setClickListener(clickListener: IRecyclerClickListener){
+            this.clickListener = clickListener
         }
+
+        init{
+            imageView = itemView.findViewById(R.id.imageView) as ImageView
+            txtName = itemView.findViewById(R.id.txtName) as TextView
+            txtPrice = itemView.findViewById(R.id.txtPrice) as TextView
+
+            //tap on item
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?){
+            clickListener!!.onItemClickListener(v, adapterPosition)
+        }
+
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyDrinkViewHolder {
@@ -71,7 +74,7 @@ class MyDrinkAdapter (
 
     private fun addToCart(drinkModel: DrinkModel) {
         //Can use firebase auth id here //URL important
-        val userCart = FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("Cart").child("UNIQUE_USER_ID")
+        val userCart = FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("Cart").child(userID)
 
         userCart.child(drinkModel.key!!).addListenerForSingleValueEvent(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -87,7 +90,7 @@ class MyDrinkAdapter (
                         cartListener.onLoadCartFailed("Success added to cart")
                     }
                         .addOnFailureListener{
-                            e -> cartListener.onLoadCartFailed(e.message)
+                                e -> cartListener.onLoadCartFailed(e.message)
                         }
 
                 }else{//If no item in cart, add new item into cart
