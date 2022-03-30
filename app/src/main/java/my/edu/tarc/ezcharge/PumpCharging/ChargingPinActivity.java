@@ -39,6 +39,8 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
     int duration = 0;
     int stationPumpR = 0;
     String stationNameR = "";
+    String passAddress = "";
+    String types = "";
 
     String passcode = "";
     String num_01, num_02, num_03, num_04;
@@ -62,6 +64,8 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
         endTime = extras.getString("END_TIME");
         stationNameR = extras.getString("LOCATION_NAME");
         stationPumpR = extras.getInt("PUMP_NO");
+        passAddress = extras.getString("PUMP_ADDRESS");
+        types = extras.getString("CONNECTOR_TYPES");
         backPin = findViewById(R.id.imageViewBackPin);
 
         backPin.setOnClickListener(new View.OnClickListener() {
@@ -196,11 +200,13 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
                     Toast.makeText(this, "Paid", Toast.LENGTH_SHORT).show();
                     //Pass Value
                     extras.putDouble("TOTAL_PAY",totalPay);
+                    extras.putString("CONNECTOR_TYPES", types);
                     extras.putString("END_TIME", endTime);
                     extras.putInt("DURATION", duration);
                     extras.putString("ACTIVITY", activity);
                     extras.putString("LOCATION_NAME", stationNameR);
                     extras.putInt("PUMP_NO", stationPumpR);
+                    extras.putString("PUMP_ADDRESS", passAddress);
                     Intent intent = new Intent(this, ChargingActivity.class);
                     intent.putExtras(extras);
                     startActivity(intent);

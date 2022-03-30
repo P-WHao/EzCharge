@@ -9,5 +9,6 @@ data class PumpItem(
     @PrimaryKey @ColumnInfo(name = "Pump_ID") val Pump_ID: String,
     @ColumnInfo(name = "Pump_Name") val Pump_Name: String,
     @ColumnInfo(name = "Pump_No") val Pump_No: Int,
-    @ColumnInfo(name = "Pump_Type") val Pump_Type: String
+    @ColumnInfo(name = "Pump_Type") val Pump_Type: String,
+    @ColumnInfo(name = "Pump_Address") val Pump_Address: String
 )

@@ -226,7 +226,7 @@
                         android:layout_width="65dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/connector_selector"
-                        android:text="hello"
+                        android:checked="true"
                         android:button="@null" />
 
                     <RadioButton
@@ -234,22 +234,24 @@
                         android:layout_width="65dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
-                        android:background="@drawable/connector_selector"
-                        android:checked="true" />
+                        android:background="@drawable/connector_selector1"
+                        android:button="@null" />
 
                     <RadioButton
                         android:id="@+id/radioButtonType3"
                         android:layout_width="65dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
-                        android:background="@drawable/connector_selector" />
+                        android:background="@drawable/connector_selector2"
+                        android:button="@null" />
 
                     <RadioButton
                         android:id="@+id/radioButtonType4"
                         android:layout_width="65dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
-                        android:background="@drawable/connector_selector" />
+                        android:background="@drawable/connector_selector3"
+                        android:button="@null" />
                 </RadioGroup>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

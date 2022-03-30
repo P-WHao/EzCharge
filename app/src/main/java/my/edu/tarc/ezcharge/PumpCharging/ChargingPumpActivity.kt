@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import my.edu.tarc.ezcharge.Data.ViewModel.PumpItemViewModel
@@ -26,6 +27,7 @@ class ChargingPumpActivity : AppCompatActivity() {
     var count = 30
     var distance = 120
     var price = 60.00
+    var types = ""
 
     private val pumpItemViewModel: PumpItemViewModel by viewModels{
         PumpItemViewModel.PumpItemViewModelFactory((application as MyApplication).pumpItemRespository)
@@ -59,9 +61,11 @@ class ChargingPumpActivity : AppCompatActivity() {
         var stationPumpR : Int = 0
         var stationCableR : String = ""
         var addTime : Int = 30
+        var stationAddressR : String = ""
 
-        var passName : String =""
+        var passName : String = ""
         var passPumpNo : Int = 0
+        var passAddress : String = ""
 
         //Get time
         val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
@@ -78,16 +82,20 @@ class ChargingPumpActivity : AppCompatActivity() {
                     val itemsFilter2 = itemsFilter1.replace("Pump_Name=", "")
                     val itemsFilter3 = itemsFilter2.replace("Pump_No=", "")
                     val itemsFilter4 = itemsFilter3.replace("Pump_Type=", "")
-                    val itemsFilter5 = itemsFilter4.replace(")]","")
-                    val itemsFilter6 = itemsFilter5.replace(" ","")
-                    val itemArrayNice: List<String> = itemsFilter5.split(",")
-                    val itemArray: List<String> = itemsFilter6.split(",")
+                    val itemsFilter5 = itemsFilter4.replace("Pump_Address=", "")
+                    val itemsFilter6 = itemsFilter5.replace(")]","")
+                    val itemsFilter7 = itemsFilter6.replace(" ","")
+                    val itemArrayNice: List<String> = itemsFilter6.split(",")
+                    val itemArray: List<String> = itemsFilter7.split(",")
 
                     //Then store the result to variable
                     stationIDR = itemArray[0]
                     stationNameR = itemArrayNice[1]
                     stationPumpR = itemArray[2].toInt()
                     stationCableR = itemArray[3]
+                    stationAddressR = itemArrayNice[4]
+                    stationNameR = stationNameR.replace("\\s".toRegex(), " ")
+                    stationAddressR = stationAddressR.replace("\\s".toRegex(), " ")
 
                     //set view
                     stationName.text = stationNameR
@@ -95,27 +103,28 @@ class ChargingPumpActivity : AppCompatActivity() {
 
                     passName = stationNameR
                     passPumpNo = stationPumpR
+                    passAddress = stationAddressR
 
-                when(stationCableR) {
-                    "universal" -> {
-                        radioButtonType1.setBackgroundResource(R.drawable.chargingcllmg)
-                        radioButtonType2.setBackgroundResource(R.drawable.chargingcllmg)
-                        radioButtonType3.setBackgroundResource(R.drawable.chargingcllmg)
-                        radioButtonType4.setBackgroundResource(R.drawable.chargingcllmg)
-                    }
-                    "multi" -> {
-                        radioButtonType1.setBackgroundResource(R.drawable.chademo)
-                        radioButtonType2.setBackgroundResource(R.drawable.chademo)
-                        radioButtonType3.setBackgroundResource(R.drawable.chademo)
-                        radioButtonType4.setBackgroundResource(R.drawable.chademo)
-                    }
-                    "many" -> {
-                        radioButtonType1.setBackgroundResource(R.drawable.chademo)
-                        radioButtonType2.setBackgroundResource(R.drawable.chademo)
-                        radioButtonType3.setBackgroundResource(R.drawable.chademo)
-                        radioButtonType4.setBackgroundResource(R.drawable.chademo)
-                    }
-                }
+//                when(stationCableR) {
+//                    "universal" -> {
+//                        radioButtonType1.setBackgroundResource(R.drawable.chademo)
+//                        radioButtonType2.setBackgroundResource(R.drawable.ccs)
+//                        radioButtonType3.setBackgroundResource(R.drawable.gbt)
+//                        radioButtonType4.setBackgroundResource(R.drawable.menkenes)
+//                    }
+//                    "multi" -> {
+//                        radioButtonType1.setBackgroundResource(R.drawable.chademo)
+//                        radioButtonType2.setBackgroundResource(R.drawable.chademo)
+//                        radioButtonType3.setBackgroundResource(R.drawable.chademo)
+//                        radioButtonType4.setBackgroundResource(R.drawable.chademo)
+//                    }
+//                    "many" -> {
+//                        radioButtonType1.setBackgroundResource(R.drawable.chademo)
+//                        radioButtonType2.setBackgroundResource(R.drawable.chademo)
+//                        radioButtonType3.setBackgroundResource(R.drawable.chademo)
+//                        radioButtonType4.setBackgroundResource(R.drawable.chademo)
+//                    }
+//                }
                 }
             })
         cal.time = d
@@ -171,12 +180,25 @@ class ChargingPumpActivity : AppCompatActivity() {
         }
 
         binding.buttonPay.setOnClickListener {
+            val gender = binding.radioGroupConnector.checkedRadioButtonId
+            if(gender == binding.radioButtonType1.id){
+                types = "CHAdeMo - Japan"
+            }else if(gender == binding.radioButtonType2.id){
+                types = "CCS1 - N.America"
+            }else if(gender == binding.radioButtonType3.id){
+                types = "GB/T - China"
+            }else{
+                types = "Menneskes - EU"
+            }
+
+            extras.putString("CONNECTOR_TYPES", types)
             extras.putDouble("TOTAL_PRICE",price)
             extras.putInt("DURATION", count)
             extras.putString("ACTIVITY", "Charge")
             extras.putString("END_TIME", newTime)
             extras.putString("LOCATION_NAME", passName)
             extras.putInt("PUMP_NO", passPumpNo)
+            extras.putString("PUMP_ADDRESS", passAddress)
             val intent = Intent(this, ChargingPinActivity::class.java)
             intent.putExtras(extras)
             startActivity(intent)

@@ -3,18 +3,18 @@
     <item android:state_checked="true" android:state_window_focused="false"
         android:drawable="@drawable/pumptake" />
     <item android:state_checked="false" android:state_window_focused="false"
-        android:drawable="@drawable/chademo" />
+        android:drawable="@drawable/gbt" />
 
     <item android:state_checked="true" android:state_pressed="true"
         android:drawable="@drawable/pumptake" />
     <item android:state_checked="false" android:state_pressed="true"
-        android:drawable="@drawable/chademo" />
+        android:drawable="@drawable/gbt" />
 
     <item android:state_checked="true" android:state_focused="true"
         android:drawable="@drawable/pumptake" />
     <item android:state_checked="false" android:state_focused="true"
-        android:drawable="@drawable/chademo" />
+        android:drawable="@drawable/gbt" />
 
-    <item android:state_checked="false" android:drawable="@drawable/chademo" />
-    <item android:state_checked="true" android:drawable= "@drawable/pumptake" />
+    <item android:state_checked="false" android:drawable="@drawable/gbt" />
+    <item android:state_checked="true" android:drawable="@drawable/pumptake" />
 </selector>
