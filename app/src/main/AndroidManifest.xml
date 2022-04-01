@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
 
+
         <activity
             android:name=".PumpCharging.ChargingPlateActivity"
             android:exported="false"

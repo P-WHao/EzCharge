@@ -211,7 +211,11 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
                     intent.putExtras(extras);
                     startActivity(intent);
                 }else{//if not null then view go to receipt
-                    startActivity(new Intent(this, ChargingCompleteActivity.class));
+                    extras.putDouble("TOTAL_PRICE",totalPay);
+
+                    Intent intent = new Intent(this, ChargingCompleteActivity.class);
+                    intent.putExtras(extras);
+                    startActivity(intent);
                 }
             }else{
                 Toast.makeText(this, getString(R.string.insufficient_money), Toast.LENGTH_SHORT).show();

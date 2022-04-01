@@ -3,9 +3,11 @@ package my.edu.tarc.ezcharge.PumpCharging
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -18,6 +20,8 @@ import kotlinx.android.synthetic.main.activity_charging_snack.*
 import kotlinx.android.synthetic.main.activity_charging_snack_cart.*
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.adapter.MyCartAdapter
+import my.edu.tarc.ezcharge.databinding.ActivityChargingSnackCartBinding
+import my.edu.tarc.ezcharge.databinding.ActivityChargingSnackSelectorBinding
 import my.edu.tarc.ezcharge.eventbus.UpdateCartEvent
 import my.edu.tarc.ezcharge.listener.ICartLoadListener
 import my.edu.tarc.ezcharge.model.CartModel
@@ -25,12 +29,19 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
+//Need Check
+//1. Switch button wont refresh
 
 class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
+    private lateinit var binding: ActivityChargingSnackCartBinding
 
     var cartLoadListener: ICartLoadListener?= null
 
     private var refreshID = ""
+    private var passToPay = 0.00
+    val extras = Bundle()
+//    private var plasticCharge = 0.00
+//    private var plasticCharge1 = 0.00
 
     //Get intent from previous activity
     //private val userID = "1" //Then pass to MyCartAdapter
@@ -58,8 +69,23 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         val userID = intent.getStringExtra("USER_ID").toString()
         refreshID = userID
+
+        binding = ActivityChargingSnackCartBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_charging_snack_cart)
+        setContentView(binding.root)
+
+//        binding.switchPlasticBag.setOnCheckedChangeListener { buttonView, isChecked ->
+//
+//            if (binding.switchPlasticBag.isChecked) {
+//                plasticCharge = 0.20
+//            } else {
+//                plasticCharge = 0.00
+//            }
+//            plasticCharge1 = plasticCharge
+//
+//        }
+//        //plasticCharge1 = plasticCharge
+
         init()
         loadCartFromFirebase()
     }
@@ -100,6 +126,7 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
 
     }
 
+    //Enter vehicle plate number
     private fun btmUpToPay() {
         val bottomSheetDialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme
         )
@@ -113,7 +140,13 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
         }
 
         bottomSheetView.findViewById<View>(R.id.buttonToPay).setOnClickListener{
-            startActivity(Intent(this, ChargingPinActivity::class.java))
+            extras.putDouble("TOTAL_PRICE", passToPay)
+            extras.putString("ACTIVITY", "NotCharge")
+            val intent = Intent(this, ChargingPinActivity::class.java)
+            intent.putExtras(extras)
+            Toast.makeText(this, "TO PAY", Toast.LENGTH_SHORT).show()
+            startActivity(intent)
+            //startActivity(Intent(this, ChargingPinActivity::class.java))
         }
 
         bottomSheetDialog.setContentView(bottomSheetView)
@@ -122,12 +155,24 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
 
     override fun onLoadCartSuccess(cartModelList: List<CartModel>) {
         var sum = 0.00
+        var cartTotal = 0
+        var sumTotal = 0.00
+
+        //binding.totalPayBeforePlastic.text = plasticCharge1.toString()
+
         for (cartModel in cartModelList!!){
             sum += cartModel!!.totalPrice
+            cartTotal += cartModel!!.quantity
+
         }
-        totalPay.text = String.format("%s %.2f", "RM ", sum)
+
+        //sumTotal = sum + plasticCharge
+        totalPayBeforePlastic.text = String.format("%s %.2f", "RM ", sum)
+        totalPay.text = String.format("%s %.2f", "RM ", sum) // Here need add plastic beg
+        totalNum.text = String.format("%d", cartTotal)
         val adapter = MyCartAdapter(this, cartModelList, refreshID)
         recycler_cart!!.adapter = adapter
+        passToPay = sum
     }
 
     override fun onLoadCartFailed(message: String?) {
