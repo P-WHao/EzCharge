@@ -3,11 +3,15 @@ package my.edu.tarc.ezcharge.PumpCharging;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import my.edu.tarc.ezcharge.R;
 public class ChargingPinActivity extends AppCompatActivity implements View.OnClickListener {
@@ -24,8 +28,17 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
     //Testing for 2 activity in 1 activity
     //String platNo = "1";
 
+//    // Retrieving the value using its keys the file name
+//// must be same in both saving and retrieving the data
+//    SharedPreferences sh = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
+//
+//    // The value will be default as empty string because for
+//// the very first time when the app is opened, there is nothing to show
+//    float walletAmount = sh.getFloat("WALLET_BALANCE", 0.00f);
+
+
     //Wallet Amount
-    Double walletAmount = 300.00;
+    //Double walletAmount = 300.00;
 
     View dot_1, dot_2, dot_3, dot_4;
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btn_clear;
@@ -41,6 +54,8 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
     String stationNameR = "";
     String passAddress = "";
     String types = "";
+    String userID = "";
+    Double walletAmount = 0.00;
 
     String passcode = "";
     String num_01, num_02, num_03, num_04;
@@ -66,6 +81,9 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
         stationPumpR = extras.getInt("PUMP_NO");
         passAddress = extras.getString("PUMP_ADDRESS");
         types = extras.getString("CONNECTOR_TYPES");
+        userID = extras.getString("USER_ID");
+        walletAmount = extras.getDouble("WALLET_BALANCE");
+
         backPin = findViewById(R.id.imageViewBackPin);
 
         backPin.setOnClickListener(new View.OnClickListener() {
@@ -207,12 +225,18 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
                     extras.putString("LOCATION_NAME", stationNameR);
                     extras.putInt("PUMP_NO", stationPumpR);
                     extras.putString("PUMP_ADDRESS", passAddress);
+                    extras.putDouble("WALLET_AMOUNT",walletAmount);
                     Intent intent = new Intent(this, ChargingActivity.class);
                     intent.putExtras(extras);
                     startActivity(intent);
                 }else{//if not null then view go to receipt
                     extras.putDouble("TOTAL_PRICE",totalPay);
-
+                    extras.putString("CONNECTOR_TYPES", activity);
+                    extras.putString("LOCATION_NAME", stationNameR);
+                    extras.putString("PUMP_ADDRESS", passAddress);
+                    extras.putDouble("WALLET_AMOUNT",walletAmount);
+                    //Remove all item in firebase
+                    FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("Cart").child(userID).removeValue();
                     Intent intent = new Intent(this, ChargingCompleteActivity.class);
                     intent.putExtras(extras);
                     startActivity(intent);

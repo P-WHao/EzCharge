@@ -21,9 +21,10 @@
     <string name="num_clear">Clear</string>
 
     <!--    Tost String-->
-    <string name = "not_check">Please Agree with the Rules!! Thanks</string>
-    <string name = "not_code">This is not an EzCharge Station Code</string>
-    <string name = "scan_again">Please Tap the scanner to rescan. Thanks</string>
+    <string name="not_check">Please Agree with the Rules!! Thanks</string>
+    <string name="not_code">This is not an EzCharge Station Code</string>
+    <string name="scan_again">Please Tap the scanner to rescan. Thanks</string>
+    <string name="empty_cart">Come On. Buy Some Snack First!! Thanks</string>
 
     <string name="zero_minute">0 Minute</string>
     <string name="zero_km">0 KM</string>

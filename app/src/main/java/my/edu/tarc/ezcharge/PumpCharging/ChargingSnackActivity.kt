@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DataSnapshot
@@ -33,6 +34,13 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
     private lateinit var binding: ActivityChargingSnackBinding
 
     private var refreshID = ""
+    private var stationR = ""
+    private var addressR = ""
+    private var walletBalance = 0.00
+
+    val extras = Bundle()
+
+    private var checkCartTotal = 0 //validation
 
     override fun onStart() {
         super.onStart()
@@ -54,7 +62,13 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val userID = intent.getStringExtra("USER_ID").toString()
+        val location = intent.getStringExtra("LOCATION_NAME").toString()
+        val addressRR = intent.getStringExtra("PUMP_ADDRESS").toString()
+        val walletBalance1 = intent.getDoubleExtra("WALLET_BALANCE", 0.00)
         refreshID = userID
+        stationR = location
+        addressR = addressRR
+        walletBalance = walletBalance1
         super.onCreate(savedInstanceState)
         binding = ActivityChargingSnackBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -117,8 +131,18 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
         btnCart.setOnClickListener{
             //pass intent (userID) to next activity
             val intent = Intent(this, ChargingSnackCartActivity::class.java)
-            intent.putExtra("USER_ID", refreshID)
-            startActivity(intent)
+            extras.putString("USER_ID", refreshID)
+            extras.putString("LOCATION_NAME", stationR)
+            extras.putString("PUMP_ADDRESS", addressR)
+            extras.putDouble("WALLET_BALANCE", walletBalance)
+            intent.putExtras(extras)
+
+            if(checkCartTotal != 0){
+                startActivity(intent)
+            }else{
+                Toast.makeText(this, getString(R.string.empty_cart), Toast.LENGTH_SHORT).show()
+            }
+
             //startActivity(Intent(this, ChargingSnackCartActivity::class.java))
         }
 
@@ -143,6 +167,7 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
         badge!!.setNumber(cartSum)
         for (cartModel in cartModelList!!) cartTotalPrice += cartModel!!.totalPrice
         totalPrice!!.text = String.format("%s %.2f", "RM ", cartTotalPrice)
+        checkCartTotal = cartSum
     }
 
     override fun onLoadCartFailed(message: String?) {

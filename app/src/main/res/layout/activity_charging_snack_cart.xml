@@ -42,48 +42,48 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_cart"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="480dp"
         android:layout_below="@+id/viewTitle"
         android:padding="8dp" />
 
-<!--    <View-->
-<!--        android:id="@+id/divider10"-->
-<!--        android:layout_below="@+id/recycler_cart"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="2dp"-->
-<!--        android:background="?android:attr/listDivider" />-->
+    <View
+        android:id="@+id/divider10"
+        android:layout_below="@+id/recycler_cart"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
 
     <LinearLayout
         android:id="@+id/viewBagTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/recycler_cart"
+        android:layout_below="@+id/divider10"
         android:layout_marginTop="5dp"
         android:orientation="horizontal"
         android:paddingStart="5dp"
         android:paddingEnd="5dp">
 
-        <!--        <RelativeLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:paddingStart="8dp"-->
-        <!--            android:paddingEnd="8dp">-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
 
-        <!--            <TextView-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_alignParentStart="true"-->
-        <!--                android:layout_centerVertical="true"-->
-        <!--                android:text="@string/charging_ezsnack_cartNoPlastic"-->
-        <!--                android:textColor="@color/black" />-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/charging_ezsnack_cartNoPlastic"
+                        android:textColor="@color/black" />
 
-        <!--            <Switch-->
-        <!--                android:id="@+id/switchPlasticBag"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_alignParentEnd="true"-->
-        <!--                tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />-->
-        <!--        </RelativeLayout>-->
+                    <Switch
+                        android:id="@+id/switchPlasticBag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck" />
+                </RelativeLayout>
     </LinearLayout>
 
     <View
