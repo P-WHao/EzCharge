@@ -33,6 +33,8 @@ class ChargingPumpActivity : AppCompatActivity() {
         PumpItemViewModel.PumpItemViewModelFactory((application as MyApplication).pumpItemRespository)
     }
 
+    val extras = Bundle()
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -41,10 +43,16 @@ class ChargingPumpActivity : AppCompatActivity() {
         binding = ActivityChargingPumpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val extras = Bundle()
+        val intent = intent
+        val extras = intent.extras
+
 
         //Get scanned item id from previous activity
-        val itemCode = intent.getStringExtra("itemCode").toString()
+//        val itemCode = intent.getStringExtra("itemCode").toString()
+//        val walletBalance = intent.getDoubleExtra("WALLET_BALANCE", 0.00)
+
+        val walletBalance = extras!!.getDouble("WALLET_BALANCE")
+        val itemCode = extras!!.getString("itemCode").toString()
 
         //Set text view
         val stationName: TextView = binding.stationName
@@ -200,6 +208,7 @@ class ChargingPumpActivity : AppCompatActivity() {
             extras.putString("LOCATION_NAME", passName)
             extras.putInt("PUMP_NO", passPumpNo)
             extras.putString("PUMP_ADDRESS", passAddress)
+            extras.putDouble("WALLET_BALANCE",walletBalance)
             val intent = Intent(this, ChargingPinActivity::class.java)
             intent.putExtras(extras)
             startActivity(intent)

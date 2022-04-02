@@ -31,6 +31,10 @@ class ChargingScanActivity : AppCompatActivity() {
         binding = ActivityChargingScanBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val extras = Bundle()
+
+        val walletBalance = intent.getDoubleExtra("WALLET_BALANCE", 0.00)
+
         setupPermission()
         codeScanner()
 
@@ -53,7 +57,9 @@ class ChargingScanActivity : AppCompatActivity() {
 
                     if(textResult.take(3) == "E-C"){
                         val intent = Intent(this, ChargingPumpActivity::class.java)
-                        intent.putExtra("itemCode", textResult)
+                        extras.putDouble("WALLET_BALANCE", walletBalance)
+                        extras.putString("itemCode", textResult)
+                        intent.putExtras(extras)
                         startActivity(intent)
                     }else{
                         Toast.makeText(this, getString(R.string.scan_again), Toast.LENGTH_SHORT).show()

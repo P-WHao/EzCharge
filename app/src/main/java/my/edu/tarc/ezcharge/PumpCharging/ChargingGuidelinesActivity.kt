@@ -16,12 +16,15 @@ class ChargingGuidelinesActivity : AppCompatActivity() {
         binding = ActivityChargingGuidelinesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val walletBalance = intent.getDoubleExtra("WALLET_BALANCE", 0.00)
+
         val isCheck = binding.checkBoxGuidelines
         //Write your code below
         binding.buttonAccept.setOnClickListener {
 
             if(isCheck.isChecked){
                 val intent = Intent(this, ChargingScanActivity::class.java)
+                intent.putExtra("WALLET_BALANCE", walletBalance)
                 startActivity(intent)
             }else{
                 Toast.makeText(this, getString(R.string.not_check), Toast.LENGTH_SHORT).show()

@@ -31,6 +31,7 @@ class ChargingActivity : AppCompatActivity() {
         val stationPumpR = extras!!.getInt("PUMP_NO")
         val passAddress = extras!!.getString("PUMP_ADDRESS")
         val types = extras.getString("CONNECTOR_TYPES")
+        val walletBalance = extras!!.getDouble("WALLET_AMOUNT")
 //        val intent = intent
 //        val totalPay = intent.getDoubleExtra("totalPay", 0.00)
 
@@ -105,6 +106,7 @@ class ChargingActivity : AppCompatActivity() {
                 extras.putString("LOCATION_NAME", stationNameR)
                 extras.putString("PUMP_ADDRESS", passAddress)
                 extras.putString("CONNECTOR_TYPES", types)
+                extras.putDouble("WALLET_AMOUNT", walletBalance)
                 //Get address and pass also
                 val intent = Intent(this, ChargingCompleteActivity::class.java)
                 intent.putExtras(extras)
