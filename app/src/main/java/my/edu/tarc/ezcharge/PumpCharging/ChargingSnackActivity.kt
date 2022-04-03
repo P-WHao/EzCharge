@@ -37,6 +37,7 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
     private var stationR = ""
     private var addressR = ""
     private var walletBalance = 0.00
+    private var userPin = ""
 
     val extras = Bundle()
 
@@ -65,10 +66,14 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
         val location = intent.getStringExtra("LOCATION_NAME").toString()
         val addressRR = intent.getStringExtra("PUMP_ADDRESS").toString()
         val walletBalance1 = intent.getDoubleExtra("WALLET_BALANCE", 0.00)
+        val userPin1 = intent.getStringExtra("USER_PIN").toString()
+
         refreshID = userID
         stationR = location
         addressR = addressRR
         walletBalance = walletBalance1
+        userPin = userPin1
+
         super.onCreate(savedInstanceState)
         binding = ActivityChargingSnackBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -135,6 +140,7 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
             extras.putString("LOCATION_NAME", stationR)
             extras.putString("PUMP_ADDRESS", addressR)
             extras.putDouble("WALLET_BALANCE", walletBalance)
+            extras.putString("USER_PIN", userPin)
             intent.putExtras(extras)
 
             if(checkCartTotal != 0){

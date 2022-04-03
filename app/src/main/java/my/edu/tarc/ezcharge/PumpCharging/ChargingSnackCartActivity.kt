@@ -1,11 +1,14 @@
 package my.edu.tarc.ezcharge.PumpCharging
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -16,10 +19,12 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_charging_plate.*
 import kotlinx.android.synthetic.main.activity_charging_snack.*
 import kotlinx.android.synthetic.main.activity_charging_snack_cart.*
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.adapter.MyCartAdapter
+import my.edu.tarc.ezcharge.databinding.ActivityChargingPlateBinding
 import my.edu.tarc.ezcharge.databinding.ActivityChargingSnackCartBinding
 import my.edu.tarc.ezcharge.databinding.ActivityChargingSnackSelectorBinding
 import my.edu.tarc.ezcharge.eventbus.UpdateCartEvent
@@ -29,8 +34,13 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
+//Cant solve the enter car plate
+
 class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
     private lateinit var binding: ActivityChargingSnackCartBinding
+    private lateinit var binding1: ActivityChargingPlateBinding
+
+    private lateinit var sharedPreferences: SharedPreferences
 
     var cartLoadListener: ICartLoadListener?= null
 
@@ -47,6 +57,7 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
     private var checkCartTotal = 0 //validation
 
     private var walletBalance = 0.00
+    private var userPin = ""
 
     override fun onStart() {
         super.onStart()
@@ -72,12 +83,16 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
         val location = intent.getStringExtra("LOCATION_NAME").toString()
         val addressRR = intent.getStringExtra("PUMP_ADDRESS").toString()
         val walletBalance1 = intent.getDoubleExtra("WALLET_BALANCE", 0.00)
+        val userPin1 = intent.getStringExtra("USER_PIN").toString()
+
         refreshID = userID
         stationR = location
         addressR = addressRR
         walletBalance = walletBalance1
+        userPin = userPin1
 
         binding = ActivityChargingSnackCartBinding.inflate(layoutInflater)
+        binding1 = ActivityChargingPlateBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
@@ -95,6 +110,10 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
 
         init()
         loadCartFromFirebase()
+    }
+
+    companion object {
+        const val PLATE = "my.edu.tarc.ezcharge.plate"
     }
 
     private fun loadCartFromFirebase() {
@@ -156,6 +175,7 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
             extras.putString("LOCATION_NAME", stationR)
             extras.putString("PUMP_ADDRESS", addressR)
             extras.putDouble("WALLET_BALANCE", walletBalance)
+            extras.putString("USER_PIN", userPin)
             val intent = Intent(this, ChargingPinActivity::class.java)
             intent.putExtras(extras)
             Toast.makeText(this, "TO PAY", Toast.LENGTH_SHORT).show()

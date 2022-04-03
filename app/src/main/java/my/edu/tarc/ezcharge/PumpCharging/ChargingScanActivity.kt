@@ -26,14 +26,18 @@ class ChargingScanActivity : AppCompatActivity() {
     //Scanner
     private lateinit var codeScanner: CodeScanner
 
+    val extras = Bundle()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChargingScanBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val extras = Bundle()
+        val intent = intent
+        val extras = intent.extras
 
-        val walletBalance = intent.getDoubleExtra("WALLET_BALANCE", 0.00)
+        val walletBalance = extras!!.getDouble("WALLET_BALANCE", 0.00)
+        val userPin = extras!!.getString("USER_PIN", "")
 
         setupPermission()
         codeScanner()
@@ -59,6 +63,7 @@ class ChargingScanActivity : AppCompatActivity() {
                         val intent = Intent(this, ChargingPumpActivity::class.java)
                         extras.putDouble("WALLET_BALANCE", walletBalance)
                         extras.putString("itemCode", textResult)
+                        extras.putString("USER_PIN", userPin)
                         intent.putExtras(extras)
                         startActivity(intent)
                     }else{

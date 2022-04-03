@@ -17,6 +17,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
     private val addressR = "Addressss"
     private val walletBalance = 200.00
     private val ezChargeCardNo = "WOOWOWOWOW"
+    private val userPin = "1111"
 
     //Share Preferences
     lateinit var sharedPreferences: SharedPreferences
@@ -40,6 +41,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
 
         binding.buttonToCharge.setOnClickListener {
             extras.putDouble("WALLET_BALANCE", walletBalance)
+            extras.putString("USER_PIN", userPin)
             val intent = Intent(this, ChargingGuidelinesActivity::class.java)
             intent.putExtras(extras)
             Toast.makeText(this, "Ready To Recharge", Toast.LENGTH_SHORT).show()
@@ -51,6 +53,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
             extras.putString("LOCATION_NAME", stationR)
             extras.putString("PUMP_ADDRESS", addressR)
             extras.putDouble("WALLET_BALANCE", walletBalance)
+            extras.putString("USER_PIN", userPin)
             val intent = Intent(this, ChargingSnackActivity::class.java)
             intent.putExtras(extras)
             Toast.makeText(this, "Get Some Snack", Toast.LENGTH_SHORT).show()

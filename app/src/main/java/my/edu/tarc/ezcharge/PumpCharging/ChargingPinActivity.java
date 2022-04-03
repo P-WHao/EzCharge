@@ -17,28 +17,11 @@ import my.edu.tarc.ezcharge.R;
 public class ChargingPinActivity extends AppCompatActivity implements View.OnClickListener {
 //TO DO
     //Get wallet balance
-    //Deduce the wallet balance
+    //Get wallet pin number
+    //Deduce the wallet balance and Update deducted balance
     //If insufficient then terminate, back to home
 
-    //Get wallet pin number
-    //Match then paid
-
     Bundle extras = new Bundle();
-
-    //Testing for 2 activity in 1 activity
-    //String platNo = "1";
-
-//    // Retrieving the value using its keys the file name
-//// must be same in both saving and retrieving the data
-//    SharedPreferences sh = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
-//
-//    // The value will be default as empty string because for
-//// the very first time when the app is opened, there is nothing to show
-//    float walletAmount = sh.getFloat("WALLET_BALANCE", 0.00f);
-
-
-    //Wallet Amount
-    //Double walletAmount = 300.00;
 
     View dot_1, dot_2, dot_3, dot_4;
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btn_clear;
@@ -56,6 +39,7 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
     String types = "";
     String userID = "";
     Double walletAmount = 0.00;
+    String userPin = "";
 
     String passcode = "";
     String num_01, num_02, num_03, num_04;
@@ -83,6 +67,7 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
         types = extras.getString("CONNECTOR_TYPES");
         userID = extras.getString("USER_ID");
         walletAmount = extras.getDouble("WALLET_BALANCE");
+        userPin = extras.getString("USER_PIN");
 
         backPin = findViewById(R.id.imageViewBackPin);
 
@@ -211,7 +196,7 @@ public class ChargingPinActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void matchPassCode() {
-        if(passcode.equals("1234")){ //Here need to integrate with user pin
+        if(passcode.equals(userPin)){ //Here need to integrate with user pin
             if(walletAmount >= totalPay){
                 walletAmount -= totalPay;
                 if(activity.equals("Charge")){//if null then view go to charging progress bar

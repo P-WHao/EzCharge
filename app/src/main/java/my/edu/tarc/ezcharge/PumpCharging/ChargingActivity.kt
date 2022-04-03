@@ -10,9 +10,6 @@ import my.edu.tarc.ezcharge.databinding.ActivityChargingBinding
 
 
 class ChargingActivity : AppCompatActivity() {
-
-    //TO DO
-    //Duration, Finish at, Price (Want use shareprefenrence?)
     val extras = Bundle()
 
     private lateinit var binding: ActivityChargingBinding
