@@ -2,6 +2,7 @@ package my.edu.tarc.ezcharge
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import my.edu.tarc.ezcharge.Location.LocationFragment
 import my.edu.tarc.ezcharge.More.MoreFragment
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         //Associate view(s) to code
         binding = ActivityMainBinding.inflate(layoutInflater)
         //setContentView(R.layout.activity_info)
+
+        //This code below is force light mode only
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(binding.root)
 
 //        //when user open app
@@ -54,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> replaceFragment(locationFragment)
                 R.id.digital_pay -> replaceFragment(payTopUpFragment)
-                R.id.rewards -> replaceFragment(inboxFragment)
+                R.id.inbox -> replaceFragment(inboxFragment)
                 R.id.more -> replaceFragment(moreFragment)
             }
             true

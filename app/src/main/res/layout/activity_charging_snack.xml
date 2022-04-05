@@ -16,8 +16,8 @@
             android:id="@+id/imageViewBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
     </LinearLayout>
 
@@ -36,7 +36,7 @@
             android:text="@string/charging_ezsnack"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/ezsnackInfo"
@@ -65,17 +65,23 @@
         </TextView>
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_drinks"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_below="@+id/ezsnackLocation"
+        android:padding="10dp" />
+
     <LinearLayout
         android:id="@+id/ezsnackCart"
-        android:orientation="horizontal"
         android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/recycler_drinks"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="5dp"
-        android:layout_centerInParent="true">
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:id="@+id/btnCart"
@@ -126,13 +132,4 @@
 
         </RelativeLayout>
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_drinks"
-        android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:layout_below="@+id/ezsnackLocation"
-        android:padding="10dp" />
-
-
 </RelativeLayout>

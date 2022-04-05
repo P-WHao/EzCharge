@@ -4,7 +4,7 @@
     <!--    Navigation Menu Bar String-->
     <string name="nav_home">Home</string>
     <string name="nav_pay">Pay</string>
-    <string name="nav_redeem">Rewards</string>
+    <string name="nav_inbox">Inbox</string>
     <string name="nav_menu">More</string>
 
     <!--    Numbering String-->
@@ -118,16 +118,78 @@
 
     <!--    News-->
     <string name="defaultNews">hello</string>
+    <string name="inboxMain">Inbox</string>
+    <string name="defaultDateTime">30 Mar 2022, 5:32 PM</string>
 
-    <!--    News Fix-->
-    <string name="title_a">Fuel Price Update &#57402;</string>
+    <!--    News Title Fix-->
+    <string name="title_a">Charge Price Update &#9981;</string>
     <string name="title_b">Top up wallet with Cash Soon &#128178;</string>
     <string name="title_c">RM5,000 CASH could be yours &#128526;</string>
-    <string name="title_d">Fuel Price Update &#57402;</string>
-    <string name="title_e">HIGHER Security, MORE Benefits &#129297;</string>
-    <string name="title_f">Fuel Price Update &#57402;</string>
-    <string name="title_g">New drops on EzCharge &#128073;</string>
-    <string name="title_h">New drops on EzCharge &#128073;</string>
-    <string name="title_i">New drops on EzCharge &#128073;</string>
-    <string name="title_j">New drops on EzCharge &#128073;</string>
+    <string name="title_d">Get RM13 bonus credits? &#128142;</string>
+    <string name="title_e">Charge Price Update &#9981;</string>
+    <string name="title_f">Securely, MORE Benefits &#129296;</string>
+    <string name="title_g">Top up with GrabPay Soon &#129297;</string>
+    <string name="title_h">New drops on EzCharge &#127873;</string>
+    <string name="title_i">Charge Price Update &#9981;</string>
+    <string name="title_j">Check Out our New Page &#127881;</string>
+
+    <!--    News Note Fix-->
+    <string name="note_a">13rd April - 29th April 2022</string>
+    <string name="note_b">Learn more &#128073;</string>
+    <string name="note_c">Hi there</string>
+    <string name="note_d">Learn more &#128073;</string>
+    <string name="note_e">6th April - 12th April 2022</string>
+    <string name="note_f">Learn more &#128073;</string>
+    <string name="note_g">Learn more &#128073;</string>
+    <string name="note_h">Learn more &#128073;</string>
+    <string name="note_i">30th March - 5th April 2022</string>
+    <string name="note_j">Learn more &#128073;</string>
+
+    <!--    News Inside Title Fix-->
+    <string name="inTitle_a">Charge Price Update 13rd April - 29th April 2022 &#9981;</string>
+    <string name="inTitle_b">Top up wallet with Cash Soon &#128178;</string>
+    <string name="inTitle_c">RM5,000 CASH could be yours &#128526;</string>
+    <string name="inTitle_d">Bonus RM13 Credit coud be yours &#128142;</string>
+    <string name="inTitle_e">Charge Price Update 6th April - 12th April 2022 &#9981;</string>
+    <string name="inTitle_f">Enjoy these benefits only with verified account &#129296;</string>
+    <string name="inTitle_g">Top up with GrabPay Soon &#129297;</string>
+    <string name="inTitle_h">Get more points &#127873;</string>
+    <string name="inTitle_i">Charge Price Update 30th March - 5th April 2022 &#9981;</string>
+    <string name="inTitle_j">Visit our page &#127881;</string>
+
+    <!--    News Fix-->
+    <string name="news_a">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="news_b">TLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="news_c">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="news_d">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="news_e">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="news_f">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="news_g">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="news_h">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="news_i">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="news_j">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+
+    <!--    News Date Time Fix-->
+    <string name="dateTime_a">12th April 2022, 5:32 PM</string>
+    <string name="dateTime_b">10th April 2022, 11:32 AM</string>
+    <string name="dateTime_c">9th April 2022, 8:32 PM</string>
+    <string name="dateTime_d">8th April 2022, 6:32 PM</string>
+    <string name="dateTime_e">5th April 2022, 5:32 PM</string>
+    <string name="dateTime_f">5th April 2022, 8:32 AM</string>
+    <string name="dateTime_g">1st April 2022, 8:32 PM</string>
+    <string name="dateTime_h">29th March 2022, 6:32 PM</string>
+    <string name="dateTime_i">29th March 2022, 9:32 AM</string>
+    <string name="dateTime_j">15th March 2022, 5:32 PM</string>
+
+    <!--    News Button Text Fix-->
+    <string name="button_a">FUEL UP NOW</string>
+    <string name="button_b">LEARN MORE</string>
+    <string name="button_c">VIEW CHALLENGES &#128073;</string>
+    <string name="button_d">LEARN MORE</string>
+    <string name="button_e">FUEL UP NOW</string>
+    <string name="button_f">VERIFY NOW</string>
+    <string name="button_g">LEARN MORE</string>
+    <string name="button_h">SHOP NOW</string>
+    <string name="button_i">FUEL UP NOW</string>
+    <string name="button_j">VISIT</string>
 </resources>

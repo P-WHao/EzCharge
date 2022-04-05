@@ -131,7 +131,7 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
 
         val gridLayoutManager = GridLayoutManager(this, 2)
         recycler_drinks.layoutManager = gridLayoutManager
-        recycler_drinks.addItemDecoration(SpaceItemDecoration())
+        //recycler_drinks.addItemDecoration(SpaceItemDecoration())
 
         btnCart.setOnClickListener{
             //pass intent (userID) to next activity
