@@ -26,4 +26,7 @@
 
     <!--    Charging Status Color-->
     <color name="gray_400">#BDBDBD</color>
+
+    <!--    News-->
+    <color name="underline">#D8D6D6</color>
 </resources>

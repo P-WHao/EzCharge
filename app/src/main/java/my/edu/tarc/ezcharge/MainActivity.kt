@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import my.edu.tarc.ezcharge.Location.LocationFragment
 import my.edu.tarc.ezcharge.More.MoreFragment
 import my.edu.tarc.ezcharge.Pay_TopUp.PayTopUpFragment
-import my.edu.tarc.ezcharge.Rewards.RewardsFragment
+import my.edu.tarc.ezcharge.Inbox.InboxFragment
 import my.edu.tarc.ezcharge.databinding.ActivityMainBinding
 
 private lateinit var binding : ActivityMainBinding
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     private val locationFragment = LocationFragment()
     private val payTopUpFragment = PayTopUpFragment()
-    private val rewardsFragment = RewardsFragment()
+    private val inboxFragment = InboxFragment()
     private val moreFragment = MoreFragment()
     private var login :String = "0"
 
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> replaceFragment(locationFragment)
                 R.id.digital_pay -> replaceFragment(payTopUpFragment)
-                R.id.rewards -> replaceFragment(rewardsFragment)
+                R.id.rewards -> replaceFragment(inboxFragment)
                 R.id.more -> replaceFragment(moreFragment)
             }
             true

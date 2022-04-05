@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
         <activity
-            android:name=".PumpCharging.ChargingSnackCartOutActivity"
+            android:name=".Inbox.NewsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".PumpCharging.ChargingPlateActivity"
@@ -76,17 +78,21 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
-            android:name=".Rewards.RewardsFragment"
-            android:exported="false" />
+            android:name=".Inbox.InboxFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".Pay_TopUp.PayTopUpFragment"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".More.MoreFragment"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".Location.LocationFragment"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

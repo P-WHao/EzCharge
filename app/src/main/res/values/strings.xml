@@ -116,4 +116,18 @@
     <string name="charging_plate_tips">Please provide your vehicle plate number so we can deliver your purchases to you.</string>
     <string name="charging_plate_hints">Enter Your Plate Number</string>
 
+    <!--    News-->
+    <string name="defaultNews">hello</string>
+
+    <!--    News Fix-->
+    <string name="title_a">Fuel Price Update &#57402;</string>
+    <string name="title_b">Top up wallet with Cash Soon &#128178;</string>
+    <string name="title_c">RM5,000 CASH could be yours &#128526;</string>
+    <string name="title_d">Fuel Price Update &#57402;</string>
+    <string name="title_e">HIGHER Security, MORE Benefits &#129297;</string>
+    <string name="title_f">Fuel Price Update &#57402;</string>
+    <string name="title_g">New drops on EzCharge &#128073;</string>
+    <string name="title_h">New drops on EzCharge &#128073;</string>
+    <string name="title_i">New drops on EzCharge &#128073;</string>
+    <string name="title_j">New drops on EzCharge &#128073;</string>
 </resources>
