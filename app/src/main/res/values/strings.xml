@@ -72,7 +72,7 @@
     <string name="charging_to_pay">PAY</string>
 
     <!--    Charging Pin String-->
-    <string name="charging_pin">Please enter your 6 digits PIN.</string>
+    <string name="charging_pin">Please enter your 4 digits PIN.</string>
     <string name="pin_not_match">PIN not match please try again</string>
     <string name="insufficient_money">Insufficient Money, please top-up</string>
     <string name="charging_pin_enter">Enter PIN To Continue</string>
