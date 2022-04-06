@@ -37,6 +37,8 @@ class ChargingPinActivity : AppCompatActivity() {
     var num_02: String? = null
     var num_03: String? = null
     var num_04: String? = null
+    var num_05: String? = null
+    var num_06: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -118,6 +120,8 @@ class ChargingPinActivity : AppCompatActivity() {
             binding.dot2.setBackgroundResource(R.drawable.pin_dot_grey)
             binding.dot3.setBackgroundResource(R.drawable.pin_dot_grey)
             binding.dot4.setBackgroundResource(R.drawable.pin_dot_grey)
+            binding.dot5.setBackgroundResource(R.drawable.pin_dot_grey)
+            binding.dot6.setBackgroundResource(R.drawable.pin_dot_grey)
         } else {
             when (number_list.size) {
                 1 -> {
@@ -135,7 +139,15 @@ class ChargingPinActivity : AppCompatActivity() {
                 4 -> {
                     num_04 = number_list[3]
                     binding.dot4.setBackgroundResource(R.drawable.pin_dot_enter)
-                    passcode = num_01 + num_02 + num_03 + num_04
+                }
+                5 -> {
+                    num_05 = number_list[4]
+                    binding.dot5.setBackgroundResource(R.drawable.pin_dot_enter)
+                }
+                6 -> {
+                    num_06 = number_list[5]
+                    binding.dot6.setBackgroundResource(R.drawable.pin_dot_enter)
+                    passcode = num_01 + num_02 + num_03 + num_04 + num_05 + num_06
                     matchPassCode()
                 }
             }
@@ -168,10 +180,7 @@ class ChargingPinActivity : AppCompatActivity() {
                     extras.putString("PUMP_ADDRESS", passAddress)
                     extras.putDouble("WALLET_AMOUNT", walletAmount)
                     //Remove all item in firebase
-                    FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/")
-                        .getReference("Cart").child(
-                            userID!!
-                        ).removeValue()
+                    FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("Cart").child(userID!!).removeValue()
                     val intent = Intent(this, ChargingCompleteActivity::class.java)
                     intent.putExtras(extras)
                     startActivity(intent)

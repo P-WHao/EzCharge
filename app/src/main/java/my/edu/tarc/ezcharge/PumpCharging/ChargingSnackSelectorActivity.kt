@@ -17,7 +17,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
     private val addressR = "Addressss"
     private val walletBalance = 200.00
     private val ezChargeCardNo = "WOOWOWOWOW"
-    private val userPin = "1111"
+    private val userPin = "111123"
 
     //Share Preferences
     lateinit var sharedPreferences: SharedPreferences

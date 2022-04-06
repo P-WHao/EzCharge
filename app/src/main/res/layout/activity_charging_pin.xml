@@ -81,6 +81,22 @@
             android:background="@drawable/pin_dot_grey"
             android:contentDescription="@null" />
 
+        <ImageView
+            android:id="@+id/dot_5"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10sp"
+            android:background="@drawable/pin_dot_grey"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/dot_6"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10sp"
+            android:background="@drawable/pin_dot_grey"
+            android:contentDescription="@null" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -102,8 +118,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_one"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/btn2"
@@ -112,8 +128,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_two"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/btn3"
@@ -122,8 +138,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_three"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -138,8 +154,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_four"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/btn5"
@@ -148,8 +164,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_five"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/btn6"
@@ -158,8 +174,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_six"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -174,8 +190,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_seven"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/btn8"
@@ -184,8 +200,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_eight"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/btn9"
@@ -194,8 +210,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_nine"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -209,8 +225,9 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
+                android:enabled="false"
                 android:textSize="30sp"
-                android:enabled="false" />
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
                 android:id="@+id/btn0"
@@ -219,8 +236,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_zero"
-                android:textSize="30sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/btn_clear"
@@ -229,8 +246,8 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:text="@string/num_clear"
-                android:textSize="20sp"
-                android:textColor="@color/blue_a400" />
+                android:textColor="#039BE5"
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 
