@@ -204,6 +204,7 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
         totalPayBeforePlastic.text = String.format("%s %.2f", "RM ", sum)
         totalPay.text = String.format("%s %.2f", "RM ", sum + plasticCharge1) // Here need add plastic beg
         totalNum.text = String.format("%d", cartTotal)
+        userWalletBalance.text = String.format("%s %.2f", "RM ", walletBalance)
         val adapter = MyCartAdapter(this, cartModelList, refreshID)
         recycler_cart!!.adapter = adapter
         passToPay = sum + plasticCharge1

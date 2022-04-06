@@ -20,6 +20,9 @@
     <string name="num_nine">9</string>
     <string name="num_clear">Clear</string>
 
+    <!--    Public Use-->
+    <string name="todo">TODO</string>
+
     <!--    Tost String-->
     <string name="not_check">Please Agree with the Rules!! Thanks</string>
     <string name="not_code">This is not an EzCharge Station Code</string>
@@ -192,4 +195,5 @@
     <string name="button_h">SHOP NOW</string>
     <string name="button_i">FUEL UP NOW</string>
     <string name="button_j">VISIT</string>
+
 </resources>
