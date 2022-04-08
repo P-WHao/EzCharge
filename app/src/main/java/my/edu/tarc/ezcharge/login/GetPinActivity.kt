@@ -25,6 +25,8 @@ class GetPinActivity : AppCompatActivity() {
     private var num_04: String? = null
     private var num_05: String? = null
     private var num_06: String? = null
+
+    var tempUID = ""
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -34,6 +36,7 @@ class GetPinActivity : AppCompatActivity() {
 
         //init firebase
         firebaseAuth = FirebaseAuth.getInstance()
+        tempUID = firebaseAuth.uid.toString()
 
         //configure progress dialog
         progressDialog = ProgressDialog(this)
@@ -133,12 +136,13 @@ class GetPinActivity : AppCompatActivity() {
 
         val timestamp = System.currentTimeMillis()
 
+
         hashMap["id"] = "$timestamp"
         hashMap["pin"] = passcode
         hashMap["uid"] = "${firebaseAuth.uid}"
 
         val ref = FirebaseDatabase.getInstance().getReference("Pin")
-        ref.child("$timestamp")
+        ref.child(tempUID)
             .setValue(hashMap)
             .addOnSuccessListener {
                 progressDialog.dismiss()

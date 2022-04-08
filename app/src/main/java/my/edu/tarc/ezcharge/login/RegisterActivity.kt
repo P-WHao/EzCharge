@@ -8,16 +8,19 @@ import android.util.Patterns
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import my.edu.tarc.ezcharge.More.MoreFragment
+import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityRegisterBinding
 
 
     private lateinit var firebaseAuth: FirebaseAuth
 
     //progress dialog
-    private lateinit var progressDialog: ProgressDialog
+    private lateinit var progressDialog:ProgressDialog
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -142,4 +145,6 @@ class RegisterActivity : AppCompatActivity() {
 
 
     }
+
+
 }

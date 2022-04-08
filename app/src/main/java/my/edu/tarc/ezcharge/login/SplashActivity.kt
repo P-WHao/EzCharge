@@ -10,9 +10,12 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import my.edu.tarc.ezcharge.MainActivity
+import my.edu.tarc.ezcharge.More.MoreFragment
 import my.edu.tarc.ezcharge.R
+import my.edu.tarc.ezcharge.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
+
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {

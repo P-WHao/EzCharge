@@ -12,9 +12,13 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import my.edu.tarc.ezcharge.MainActivity
+import my.edu.tarc.ezcharge.More.MoreFragment
+import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityLoginBinding
+import my.edu.tarc.ezcharge.databinding.ActivityRegisterBinding
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
 
     private lateinit var firebaseAuth: FirebaseAuth
@@ -96,7 +100,7 @@ class LoginActivity : AppCompatActivity() {
 
         val ref = FirebaseDatabase.getInstance().getReference("Users")
         ref.child(firebaseUser.uid)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
+            .addListenerForSingleValueEvent(object : ValueEventListener{
 
 
                 override fun onDataChange(snapshot: DataSnapshot) {

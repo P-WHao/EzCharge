@@ -111,6 +111,10 @@ class ChargingPinActivity : AppCompatActivity() {
             passNumber(number_list)
         }
 
+        binding.imageViewBackPin.setOnClickListener {
+            finish()
+        }
+
     }
 
 
