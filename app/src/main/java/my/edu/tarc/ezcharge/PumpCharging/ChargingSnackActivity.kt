@@ -77,7 +77,7 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
         super.onCreate(savedInstanceState)
         binding = ActivityChargingSnackBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.titleSnack.text = userPin1
+        binding.titleSnack.text = stationR
         init()
         loadDrinkFromFireBase()
         countCartFromFireBase()

@@ -204,4 +204,20 @@
     <!--    PIN REGISTER LOGIN-->
     <string name="register_pin">Please create your 6 digits PIN.</string>
     <string name="register_pin_create">Create a Pin</string>
+
+    <!--    LY-->
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="select_station">Selected Station :</string>
+    <string name="search">Search</string>
+    <string name="location">Location</string>
+    <string name="goStation">Go to Station</string>
+    <string name="no_app">No apps can handle this action</string>
+    <string name="view_near">View Nearest</string>
+    <string name="near_station">Nearest Station :</string>
+    <string name="info_name">Name</string>
+    <string name="type_charge">Charge types</string>
+    <string name="japan_type">CHAdeMo - Japan</string>
+    <string name="america_type">CCS1 - N.America</string>
+    <string name="china_type">GB/T - China</string>
+    <string name="eu_type">Menneskes - EU</string>
 </resources>

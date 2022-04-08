@@ -98,4 +98,18 @@ dependencies {
 
     implementation "androidx.browser:browser:1.4.0"
     implementation 'com.google.firebase:firebase-database-ktx:20.0.4'
+
+//    LY
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    implementation 'com.google.firebase:firebase-database-ktx'
+
+    //imageView
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

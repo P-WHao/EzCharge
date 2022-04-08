@@ -1,33 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
+    android:layout_gravity="bottom"
+    android:layout_y="10dp"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".Location.LocationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:text="Home Fragment"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <fragment
+        android:id="@+id/myMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        tools:context=".MapsActivity" />
 
     <Button
-        android:id="@+id/buttonStartCharge"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnViewNearest"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="383dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/custome_button"
+        android:backgroundTint="@color/blue_a400"
+        android:text="@string/view_near"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:visibility="visible" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btnGoProfile"
+
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="30dp"
+
+        android:background="@drawable/custome_button"
+        android:text="RM0.00"
+        android:textAlignment="inherit"
+        android:textColor="#FFFFFF"
+
+        android:textSize="12sp"
+        android:visibility="visible"
+        map:icon="@drawable/ic_baseline_person_outline_24" />
+
+    <ImageView
+        android:id="@+id/imageSearch"
+        android:layout_width="40dp"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:background="#FFFFFF"
+        android:visibility="visible"
+        map:srcCompat="@drawable/ic_baseline_search_24" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardStation"
+        android:layout_width="240dp"
+        android:layout_height="121dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        map:cardBackgroundColor="#FFFFFF">
+
+        <Button
+            android:id="@+id/btnGostation"
+            android:layout_width="157dp"
+            android:layout_height="49dp"
+
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="65dp"
+            android:backgroundTint="@color/blue_a400"
+            android:text="@string/goStation"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/btnStation"
+            android:layout_width="110dp"
+            android:layout_marginStart="45dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="547dp"
+            android:background="@color/white"
+            android:text="@string/near_station"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+        <TextView
+
+            android:id="@+id/btnOutputKm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="0.5dp"
+
+            android:text="16km" />
+
+        <TextView
+
+            android:id="@+id/btnOutputName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="30dp"
+
+            android:layout_marginTop="25dp"
+
+
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

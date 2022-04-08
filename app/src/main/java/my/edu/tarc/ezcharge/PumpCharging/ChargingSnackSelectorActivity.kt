@@ -18,10 +18,12 @@ import my.edu.tarc.ezcharge.login.DashboardAdminActivity
 
 class ChargingSnackSelectorActivity : AppCompatActivity() {
 
-    //Here need to retrieve current user login ID from JK OR JS
+    //Here need to get LY Address and Station Name
+    //Here need to get JK Wallet Balance and Ez Charge Card No
+
     //private val userID = "HELLO"
-    private val stationR = "KL"
-    private val addressR = "Addressss"
+    //private val stationR = "KL"
+    private var addressR = ""
     private val walletBalance = 200.00
     private val ezChargeCardNo = "WOOWOWOWOW"
     //private val userPin = "111123"
@@ -42,6 +44,23 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChargingSnackSelectorBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val stationR = intent.getStringExtra("EXTRA_location").toString()
+
+        if(stationR == "Ez Charge Wangsa Maju"){
+            addressR = "32-20, Jalan Metro Wangsa, Wangsa Maju, 53300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
+        }else if(stationR == "Ez Charge Taman Bunga Raya"){
+            addressR = "Jalan Malinja, Taman Bunga Raya, 51300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
+        }else if(stationR == "Ez Charge Danau Kota"){
+            addressR = "Danau Kota, 53100 Kuala Lumpur, Federal Territory of Kuala Lumpur"
+        }else if(stationR == "Ez Charge Ampang Jaya"){
+            addressR =  "Jalan Besar, Pekan Ampang, 68000 Ampang, Selangor"
+        }else if(stationR == "Ez Charge Setiawangsa"){
+            addressR = "2, Jalan Bukit Setiawangsa 5, Taman Setiawangsa, 54200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
+        }else if(stationR == "Ez Charge City Centre"){
+            addressR = "Kuala Lumpur City Centre, 50050 Kuala Lumpur, Federal Territory of Kuala Lumpur"
+        }
+
 
         firebaseAuth = FirebaseAuth.getInstance()
         //get current user, if is logged in
