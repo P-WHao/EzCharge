@@ -1,5 +1,6 @@
 package my.edu.tarc.ezcharge
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
@@ -9,6 +10,7 @@ import my.edu.tarc.ezcharge.More.MoreFragment
 import my.edu.tarc.ezcharge.Pay_TopUp.PayTopUpFragment
 import my.edu.tarc.ezcharge.Inbox.InboxFragment
 import my.edu.tarc.ezcharge.databinding.ActivityMainBinding
+import my.edu.tarc.ezcharge.login.SplashActivity
 
 private lateinit var binding : ActivityMainBinding
 
@@ -31,16 +33,18 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(binding.root)
 
-//        //when user open app
-//        //add (use intent to check whether user login)
-//        if(login == "0"){
-//            val intent = Intent(this, ChargingActivity::class.java)
-//            startActivity(intent)
-//            //finishAffinity()
-//        }else{
-//            menuNavigation()
-//        }
-        menuNavigation()
+        //when user open app
+        //add (use intent to check whether user login)
+        login = intent.getStringExtra("Login").toString()
+
+        if(login == "null"){
+            val intent = Intent(this, SplashActivity::class.java)
+            startActivity(intent)
+            finish()
+        }else{
+            menuNavigation()
+            replaceFragment(locationFragment)
+        }
     }
 
     //Use to replace fragment when user select different tab at bottom navigation bar

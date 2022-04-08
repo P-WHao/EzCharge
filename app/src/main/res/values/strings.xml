@@ -196,4 +196,12 @@
     <string name="button_i">FUEL UP NOW</string>
     <string name="button_j">VISIT</string>
 
+    <!--    JS-->
+    <string name="nocode">Didn\'t get OTP? <b>Resend</b></string>
+    <string name="new_user_signup">New User? <b><font color="#29a3e6">SignUp</font></b></string>
+    <string name="register"><b>Register</b></string>
+
+    <!--    PIN REGISTER LOGIN-->
+    <string name="register_pin">Please create your 6 digits PIN.</string>
+    <string name="register_pin_create">Create a Pin</string>
 </resources>

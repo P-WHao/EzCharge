@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.GetPinActivity">
+
+    <LinearLayout
+        android:id="@+id/titlePin"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageViewBackPin"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_margin="15dp"-->
+        <!--            android:contentDescription="@string/todo"-->
+        <!--            app:srcCompat="@drawable/ic_back_white" />-->
+
+        <TextView
+            android:id="@+id/textViewPinEnter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            android:text="@string/register_pin_create"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:text="@string/register_pin"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dot_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlePin"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/dot_1"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/pin_dot_grey"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/dot_2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10sp"
+            android:background="@drawable/pin_dot_grey"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/dot_3"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10sp"
+            android:background="@drawable/pin_dot_grey"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/dot_4"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10sp"
+            android:background="@drawable/pin_dot_grey"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/dot_5"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10sp"
+            android:background="@drawable/pin_dot_grey"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/dot_6"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10sp"
+            android:background="@drawable/pin_dot_grey"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lock_keypad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn1"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_one"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btn2"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_two"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btn3"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_three"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn4"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_four"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btn5"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_five"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btn6"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_six"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn7"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_seven"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btn8"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_eight"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btn9"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_nine"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_space"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:textSize="30sp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/btn0"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_zero"
+                android:textColor="@color/blue01"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/btn_clear"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/num_clear"
+                android:textColor="@color/blue01"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

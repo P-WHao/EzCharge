@@ -29,4 +29,13 @@
 
     <!--    News-->
     <color name="underline">#D8D6D6</color>
+
+    <!--    JS-->
+    <color name="pinkColor">#FF003B</color>
+    <color name="transparentColor">#00FFFFFF</color>
+    <color name="gray01">#c5c5c5</color>
+    <color name="gray02">#777777</color>
+    <color name="blue01">#29a3e6</color>
+
+
 </resources>

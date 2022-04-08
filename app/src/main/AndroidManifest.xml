@@ -16,10 +16,50 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
         <activity
-            android:name=".Inbox.NewsActivity"
+            android:name=".More.EditProfileActivity"
+            android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.EzCharge.NoActionBar"
-            android:exported="false" />
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".login.SplashActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".login.DashboardAdminActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".login.GetPinActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".login.RegisterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".login.ForgotPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".login.BeforeLoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".Inbox.NewsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".PumpCharging.ChargingPlateActivity"
             android:exported="false"
