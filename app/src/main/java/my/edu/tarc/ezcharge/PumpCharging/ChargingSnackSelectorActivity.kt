@@ -87,7 +87,8 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
         ref.child(userUIDFirst)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    val userUID = snapshot.child("uid").value
+                    val userUIDPri = snapshot.child("uid").value
+                    userUID = userUIDPri.toString()
                 }
 
                 override fun onCancelled(error: DatabaseError){
