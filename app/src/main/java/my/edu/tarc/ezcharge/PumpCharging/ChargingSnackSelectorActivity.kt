@@ -68,6 +68,8 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
 
         val ref = FirebaseDatabase.getInstance().getReference("Users")
 
+        //Get Wallet Balance
+
         //Get USER_PIN
         val userPin = FirebaseDatabase.getInstance().getReference("Pin")
         if (firebaseUser != null) {
