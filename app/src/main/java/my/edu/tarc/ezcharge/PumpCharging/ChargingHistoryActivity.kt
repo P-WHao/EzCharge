@@ -33,26 +33,6 @@ class ChargingHistoryActivity : AppCompatActivity() {
 
         val currentUID = intent.getStringExtra("CURRENT_UID").toString()
         userUID = currentUID
-//        firebaseAuth = FirebaseAuth.getInstance()
-//        //get current user, if is logged in
-//        val firebaseUser = firebaseAuth.currentUser
-//
-//        val ref = FirebaseDatabase.getInstance().getReference("Users")
-//        if (firebaseUser != null) {
-//            userUIDFirst = firebaseUser.uid
-//        }
-//
-//        ref.child(userUIDFirst)
-//            .addListenerForSingleValueEvent(object : ValueEventListener {
-//                override fun onDataChange(snapshot: DataSnapshot) {
-//                    val userUIDPri = snapshot.child("uid").value
-//                    userUID = userUIDPri.toString()
-//                }
-//
-//                override fun onCancelled(error: DatabaseError){
-//
-//                }
-//            })
 
         buttonBack.setOnClickListener{
             finish()

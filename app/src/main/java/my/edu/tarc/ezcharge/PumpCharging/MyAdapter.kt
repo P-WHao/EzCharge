@@ -18,9 +18,11 @@ class MyAdapter(private val histList : ArrayList<HistoryCharge>) : RecyclerView.
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentitem = histList[position]
 
+        holder.histTypes.text = currentitem.histtypes
         holder.locationCharge.text = currentitem.location
         holder.types.text = currentitem.types
-        holder.pay.text = "RM " + currentitem.pay + "0"
+        holder.pay.text = "-RM " + currentitem.pay + "0"
+        holder.timedateuser.text = currentitem.timedate
     }
 
     override fun getItemCount(): Int {
@@ -29,9 +31,11 @@ class MyAdapter(private val histList : ArrayList<HistoryCharge>) : RecyclerView.
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
 
+        val histTypes : TextView = itemView.findViewById(R.id.histTypes)
         val locationCharge : TextView = itemView.findViewById(R.id.location)
         val types : TextView = itemView.findViewById(R.id.types)
         val pay : TextView = itemView.findViewById(R.id.pay)
+        val timedateuser : TextView = itemView.findViewById(R.id.date)
     }
 
 

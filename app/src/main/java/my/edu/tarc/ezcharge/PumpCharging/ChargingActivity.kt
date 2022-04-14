@@ -2,16 +2,21 @@ package my.edu.tarc.ezcharge.PumpCharging
 
 import android.app.ProgressDialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingBinding
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 
-private lateinit var progressDialog: ProgressDialog
+lateinit var progressDialog: ProgressDialog
 
 class ChargingActivity : AppCompatActivity() {
     val extras = Bundle()
@@ -25,7 +30,9 @@ class ChargingActivity : AppCompatActivity() {
     private var tempStationNameR = ""
     private var tempTypes = ""
     private var tempTotalPay = ""
+    private var tempDateTime = ""
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         val intent = intent
         val extras = intent.extras
@@ -57,7 +64,7 @@ class ChargingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChargingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        getTime()
         addRecordToFirebase()
 
         val handler = Handler()
@@ -159,6 +166,19 @@ class ChargingActivity : AppCompatActivity() {
         binding.textViewProgress.text = "$progr%"
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getTime() {
+
+        val current = LocalDateTime.now()
+
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        val formatted = current.format(formatter)
+
+        tempDateTime = formatted
+
+        println("Current Date is: $formatted")
+    }
+
     private fun addRecordToFirebase() {
         progressDialog.show()
 
@@ -166,21 +186,23 @@ class ChargingActivity : AppCompatActivity() {
 
         val timestamp = System.currentTimeMillis()
 
+        hashMap["histtypes"] = "EzCharge"
         hashMap["location"] = tempStationNameR
         hashMap["types"] = tempTypes
         hashMap["pay"] = tempTotalPay
+        hashMap["timedate"] = tempDateTime
 
         val ref = FirebaseDatabase.getInstance().getReference("ChargeHis").child(tempID)
         ref.child(timestamp.toString())
             .setValue(hashMap)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                Toast.makeText(this,"Pin added successfully!", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"Pin added successfully!", Toast.LENGTH_SHORT).show()
             }
 
             .addOnFailureListener { e->
                 progressDialog.dismiss()
-                Toast.makeText(this,"Failed to add due to ${e.message}", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"Failed to add due to ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
 

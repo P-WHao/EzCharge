@@ -15,24 +15,36 @@
         android:layout_marginVertical="6dp">
 
         <TextView
-            android:id="@+id/location"
+            android:id="@+id/histTypes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="Put What Types"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/histTypes"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="1dp"
             android:text="Put Location"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/types"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/location"
-            android:layout_marginTop="5dp"
             android:layout_alignParentStart="true"
+            android:layout_marginBottom="10dp"
             android:text="Put Type"
-            android:textColor="@color/black"
+            android:textColor="@color/grey_500"
             android:textSize="14sp" />
 
         <TextView
@@ -40,12 +52,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="1dp"
             android:text="Price"
-            android:textColor="@color/black"
+            android:textColor="@color/blue_a700"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"/>
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pay"
+            android:layout_alignParentEnd="true"
+            android:text="Price"
+            android:textColor="@color/grey_500"
+            android:textSize="14sp" />
 
 
     </RelativeLayout>

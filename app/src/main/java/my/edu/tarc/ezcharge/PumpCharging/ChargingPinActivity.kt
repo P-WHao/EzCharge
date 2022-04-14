@@ -184,6 +184,7 @@ class ChargingPinActivity : AppCompatActivity() {
                     extras.putString("LOCATION_NAME", stationNameR)
                     extras.putString("PUMP_ADDRESS", passAddress)
                     extras.putDouble("WALLET_AMOUNT", walletAmount)
+                    extras.putString("USER_ID", userID)
                     //Remove all item in firebase
                     FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("Cart").child(userID!!).removeValue()
                     val intent = Intent(this, ChargingCompleteActivity::class.java)

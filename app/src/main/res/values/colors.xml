@@ -16,6 +16,7 @@
 
     <!--    Guidelines Color-->
     <color name="grey_800">#424242</color>
+    <color name="grey_500">#9E9E9E</color>
     <color name="blue_a100">#80D8FF</color>
     <color name="amber_a400">#FFC400</color>
 
@@ -23,6 +24,7 @@
     <color name="gray_800">#424242</color>
 
     <color name="testing">#99000000</color>
+    <color name="blue_a700">#2962FF</color>
 
     <!--    Charging Status Color-->
     <color name="gray_400">#BDBDBD</color>

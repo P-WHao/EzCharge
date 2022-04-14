@@ -36,7 +36,7 @@
     <string name="no_history">No History Record Found!!</string>
 
     <!--Charging History-->
-    <string name="charge_hist">Charging History</string>
+    <string name="charge_hist">Purchase History</string>
 
     <!--    Charging Snack Selector String-->
     <string name="toCharge">TO CHARGE</string>
