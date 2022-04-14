@@ -115,6 +115,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
 
         binding.buttonToCharge.setOnClickListener {
             extras.putDouble("WALLET_BALANCE", walletBalance)
+            extras.putString("USER_ID", userUID)
             extras.putString("USER_PIN", userPass)
             val intent = Intent(this, ChargingGuidelinesActivity::class.java)
             intent.putExtras(extras)

@@ -38,6 +38,7 @@ class ChargingScanActivity : AppCompatActivity() {
 
         val walletBalance = extras!!.getDouble("WALLET_BALANCE", 0.00)
         val userPin = extras!!.getString("USER_PIN", "")
+        val userID = extras!!.getString("USER_ID").toString()
 
         setupPermission()
         codeScanner()
@@ -64,6 +65,7 @@ class ChargingScanActivity : AppCompatActivity() {
                         extras.putDouble("WALLET_BALANCE", walletBalance)
                         extras.putString("itemCode", textResult)
                         extras.putString("USER_PIN", userPin)
+                        extras.putString("USER_ID", userID)
                         intent.putExtras(extras)
                         startActivity(intent)
                     }else{

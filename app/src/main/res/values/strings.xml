@@ -33,6 +33,11 @@
     <string name="zero_km">0 KM</string>
     <string name="zero_price">RM 0.00</string>
 
+    <string name="no_history">No History Record Found!!</string>
+
+    <!--Charging History-->
+    <string name="charge_hist">Charging History</string>
+
     <!--    Charging Snack Selector String-->
     <string name="toCharge">TO CHARGE</string>
     <string name="toBuySnack">TO SNACK</string>

@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import my.edu.tarc.ezcharge.PumpCharging.ChargingHistoryActivity
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.FragmentMoreBinding
 import my.edu.tarc.ezcharge.login.BeforeLoginActivity
@@ -31,6 +32,8 @@ class MoreFragment : Fragment() {
     private lateinit var firebaseUser: FirebaseUser
 
     private lateinit var progressDialog: ProgressDialog
+
+    private var toHistCharge = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMoreBinding.inflate(layoutInflater)
@@ -59,6 +62,13 @@ class MoreFragment : Fragment() {
 
         binding.profileEditBtn.setOnClickListener{
             val intent = Intent (this@MoreFragment.requireContext(), EditProfileActivity::class.java)
+            startActivity(intent)
+        }
+
+        //Wen Hao Charge History
+        binding.viewHistCharge.setOnClickListener{
+            val intent = Intent (this@MoreFragment.requireContext(), ChargingHistoryActivity::class.java)
+            intent.putExtra("CURRENT_UID", toHistCharge)
             startActivity(intent)
         }
 
@@ -144,6 +154,8 @@ class MoreFragment : Fragment() {
 
                 }
             })
+
+        toHistCharge = firebaseAuth.uid.toString()
     }
 
     private fun checkUser() {

@@ -174,6 +174,7 @@ class ChargingPinActivity : AppCompatActivity() {
                     extras.putInt("PUMP_NO", stationPumpR)
                     extras.putString("PUMP_ADDRESS", passAddress)
                     extras.putDouble("WALLET_AMOUNT", walletAmount)
+                    extras.putString("USER_ID", userID)
                     val intent = Intent(this, ChargingActivity::class.java)
                     intent.putExtras(extras)
                     startActivity(intent)

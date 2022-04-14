@@ -17,17 +17,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
-
+        <activity
+            android:name=".PumpCharging.ChargingHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar"
+            android:parentActivityName=".More.MoreFragment"/>
         <activity
             android:name=".Location.LocationListActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".Location.LocationInfo"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".More.EditProfileActivity"
             android:exported="false"

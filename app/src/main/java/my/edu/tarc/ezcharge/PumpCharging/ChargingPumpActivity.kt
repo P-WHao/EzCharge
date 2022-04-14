@@ -54,6 +54,7 @@ class ChargingPumpActivity : AppCompatActivity() {
         val walletBalance = extras!!.getDouble("WALLET_BALANCE")
         val itemCode = extras!!.getString("itemCode").toString()
         val userPin = extras!!.getString("USER_PIN", "")
+        val userID = extras!!.getString("USER_ID").toString()
 
         //Set text view
         val stationName: TextView = binding.stationName
@@ -215,6 +216,7 @@ class ChargingPumpActivity : AppCompatActivity() {
             extras.putString("PUMP_ADDRESS", passAddress)
             extras.putDouble("WALLET_BALANCE",walletBalance)
             extras.putString("USER_PIN", userPin)
+            extras.putString("USER_ID", userID)
             val intent = Intent(this, ChargingPinActivity::class.java)
             intent.putExtras(extras)
             startActivity(intent)

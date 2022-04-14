@@ -22,6 +22,7 @@ class ChargingGuidelinesActivity : AppCompatActivity() {
 
         val walletBalance = extras!!.getDouble("WALLET_BALANCE", 0.00)
         val userPin = extras!!.getString("USER_PIN", "")
+        val userID = extras!!.getString("USER_ID").toString()
 
         val isCheck = binding.checkBoxGuidelines
         //Write your code below
@@ -31,6 +32,7 @@ class ChargingGuidelinesActivity : AppCompatActivity() {
                 val intent = Intent(this, ChargingScanActivity::class.java)
                 extras.putDouble("WALLET_BALANCE", walletBalance)
                 extras.putString("USER_PIN", userPin)
+                extras.putString("USER_ID", userID)
                 intent.putExtras(extras)
                 startActivity(intent)
             }else{

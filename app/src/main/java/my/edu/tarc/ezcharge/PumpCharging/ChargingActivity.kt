@@ -1,13 +1,17 @@
 package my.edu.tarc.ezcharge.PumpCharging
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.FirebaseDatabase
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingBinding
 
+
+private lateinit var progressDialog: ProgressDialog
 
 class ChargingActivity : AppCompatActivity() {
     val extras = Bundle()
@@ -17,6 +21,11 @@ class ChargingActivity : AppCompatActivity() {
     private val stop: Boolean = false
     private var stop1: Boolean = false
 
+    private var tempID = ""
+    private var tempStationNameR = ""
+    private var tempTypes = ""
+    private var tempTotalPay = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val intent = intent
         val extras = intent.extras
@@ -24,17 +33,32 @@ class ChargingActivity : AppCompatActivity() {
         val endTime = extras!!.getString("END_TIME")
         val activity = extras!!.getString("ACTIVITY")
         val duration = extras!!.getInt("DURATION")
-        val stationNameR = extras!!.getString("LOCATION_NAME")
+        val stationNameR = extras!!.getString("LOCATION_NAME").toString()
         val stationPumpR = extras!!.getInt("PUMP_NO")
         val passAddress = extras!!.getString("PUMP_ADDRESS")
-        val types = extras.getString("CONNECTOR_TYPES")
+        val types = extras.getString("CONNECTOR_TYPES").toString()
         val walletBalance = extras!!.getDouble("WALLET_AMOUNT")
+
+        val userID = extras!!.getString("USER_ID").toString()
+
+        //For history firebase
+        tempID = userID
+        tempStationNameR = stationNameR
+        tempTypes = types
+        tempTotalPay = totalPay.toString()
 //        val intent = intent
 //        val totalPay = intent.getDoubleExtra("totalPay", 0.00)
+
+        //configure progress dialog
+        progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Please wait")
+        progressDialog.setCanceledOnTouchOutside(false)
 
         super.onCreate(savedInstanceState)
         binding = ActivityChargingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        addRecordToFirebase()
 
         val handler = Handler()
         val runnable: Runnable = object : Runnable {
@@ -134,4 +158,30 @@ class ChargingActivity : AppCompatActivity() {
         binding.progressBar.progress = progr
         binding.textViewProgress.text = "$progr%"
     }
+
+    private fun addRecordToFirebase() {
+        progressDialog.show()
+
+        val hashMap = HashMap<String, Any>()
+
+        val timestamp = System.currentTimeMillis()
+
+        hashMap["location"] = tempStationNameR
+        hashMap["types"] = tempTypes
+        hashMap["pay"] = tempTotalPay
+
+        val ref = FirebaseDatabase.getInstance().getReference("ChargeHis").child(tempID)
+        ref.child(timestamp.toString())
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                Toast.makeText(this,"Pin added successfully!", Toast.LENGTH_SHORT).show()
+            }
+
+            .addOnFailureListener { e->
+                progressDialog.dismiss()
+                Toast.makeText(this,"Failed to add due to ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
 }
