@@ -193,12 +193,16 @@ class ChargingPumpActivity : AppCompatActivity() {
             val gender = binding.radioGroupConnector.checkedRadioButtonId
             if(gender == binding.radioButtonType1.id){
                 types = "CHAdeMo - Japan"
+                Toast.makeText(this, "Selected CHAdeMo - Japan", Toast.LENGTH_SHORT).show()
             }else if(gender == binding.radioButtonType2.id){
                 types = "CCS1 - N.America"
+                Toast.makeText(this, "Selected CCS1 - N.America", Toast.LENGTH_SHORT).show()
             }else if(gender == binding.radioButtonType3.id){
                 types = "GB/T - China"
+                Toast.makeText(this, "Selected GB/T - China", Toast.LENGTH_SHORT).show()
             }else{
                 types = "Menneskes - EU"
+                Toast.makeText(this, "Selected Menneskes - EU", Toast.LENGTH_SHORT).show()
             }
 
             extras.putString("CONNECTOR_TYPES", types)

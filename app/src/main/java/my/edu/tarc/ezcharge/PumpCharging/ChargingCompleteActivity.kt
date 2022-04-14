@@ -47,7 +47,7 @@ class ChargingCompleteActivity : AppCompatActivity() {
         binding.textViewLocationAddr.text = passAddress
 
         binding.textViewWalletBalance.text = String.format("RM %.2f", walletAmount)
-        binding.textViewEzChargeNoResult.text = ezChargeCardNo
+        //binding.textViewEzChargeNoResult.text = ezChargeCardNo
 
         binding.imageViewCloseButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

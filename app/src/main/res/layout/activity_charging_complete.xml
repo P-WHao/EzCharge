@@ -246,29 +246,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
 
     <TextView
-        android:id="@+id/textViewEzChargeNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="@string/charging_complete_ezchargeNo"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptDate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewReceiptDate" />
-
-    <TextView
-        android:id="@+id/textViewEzChargeNoResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="@string/charging_null"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewReceiptDateResult"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewReceiptDateResult" />
-
-    <TextView
         android:id="@+id/textViewReceiptDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
