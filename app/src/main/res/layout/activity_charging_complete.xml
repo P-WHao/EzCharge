@@ -183,15 +183,14 @@
 
     <ImageView
         android:id="@+id/imageViewLocationImage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider9"
-        app:srcCompat="@drawable/chargingcllmg" />
+        app:layout_constraintTop_toTopOf="@+id/divider9"/>
 
     <ImageView
         android:id="@+id/imageViewLogo"
@@ -200,11 +199,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="8dp"
-        android:tint="@color/blue_a400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewLocationImage"
-        app:srcCompat="@drawable/ic_baseline_electric_bolt_24" />
+        app:srcCompat="@drawable/ic_baseline_electric_bolt_24"
+        app:tint="@color/blue_a400" />
 
     <TextView
         android:id="@+id/textViewLogoTitle"

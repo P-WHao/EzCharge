@@ -47,10 +47,10 @@ public abstract class PumpItemRoomDB : RoomDatabase(){
 
                     //pre-populate data
                     //C1 Item
-                    itemRoomDB.pumpItemDao().insert(PumpItem("E-C1-00001","EzCharge Wangsa Maju",1,"universal", "32-20 Jalan Metro Wangsa Wangsa Maju 53300 Kuala Lumpur Wilayah Persekutuan Kuala Lumpur"))
-                    itemRoomDB.pumpItemDao().insert(PumpItem("E-C1-00002","EzCharge Wangsa Maju",2,"universal", "32-20 Jalan Metro Wangsa Wangsa Maju 53300 Kuala Lumpur Wilayah Persekutuan Kuala Lumpur"))
-                    itemRoomDB.pumpItemDao().insert(PumpItem("E-C1-00003","EzCharge Wangsa Maju",3,"universal", "32-20 Jalan Metro Wangsa Wangsa Maju 53300 Kuala Lumpur Wilayah Persekutuan Kuala Lumpur"))
-                    itemRoomDB.pumpItemDao().insert(PumpItem("E-C1-00004","EzCharge Wangsa Maju",4,"universal", "32-20 Jalan Metro Wangsa Wangsa Maju 53300 Kuala Lumpur Wilayah Persekutuan Kuala Lumpur"))
+                    itemRoomDB.pumpItemDao().insert(PumpItem("E-C1-00001","Ez Charge Wangsa Maju",1,"universal", "32-20 Jalan Metro Wangsa Wangsa Maju 53300 Kuala Lumpur Wilayah Persekutuan Kuala Lumpur"))
+                    itemRoomDB.pumpItemDao().insert(PumpItem("E-C1-00002","Ez Charge Wangsa Maju",2,"universal", "32-20 Jalan Metro Wangsa Wangsa Maju 53300 Kuala Lumpur Wilayah Persekutuan Kuala Lumpur"))
+                    itemRoomDB.pumpItemDao().insert(PumpItem("E-C1-00003","Ez Charge Wangsa Maju",3,"universal", "32-20 Jalan Metro Wangsa Wangsa Maju 53300 Kuala Lumpur Wilayah Persekutuan Kuala Lumpur"))
+                    itemRoomDB.pumpItemDao().insert(PumpItem("E-C1-00004","Ez Charge Wangsa Maju",4,"universal", "32-20 Jalan Metro Wangsa Wangsa Maju 53300 Kuala Lumpur Wilayah Persekutuan Kuala Lumpur"))
 
                     //C2 Item
                     itemRoomDB.pumpItemDao().insert(PumpItem("E-C2-00001","Ez Charge Taman Bunga Raya",1,"multi", "Jalan Malinja Taman Bunga Raya 51300 Kuala Lumpur Wilayah Persekutuan Kuala Lumpur"))

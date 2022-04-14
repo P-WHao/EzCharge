@@ -10,21 +10,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_charging_plate.*
 import kotlinx.android.synthetic.main.activity_charging_snack.*
 import kotlinx.android.synthetic.main.activity_charging_snack_cart.*
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.adapter.MyCartAdapter
-import my.edu.tarc.ezcharge.databinding.ActivityChargingPlateBinding
 import my.edu.tarc.ezcharge.databinding.ActivityChargingSnackCartBinding
 import my.edu.tarc.ezcharge.databinding.ActivityChargingSnackSelectorBinding
 import my.edu.tarc.ezcharge.eventbus.UpdateCartEvent
@@ -144,45 +144,23 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
             finish()
         }
 
+        val bottomSheetFragment = ChargingBottomSheetFragment()
+
         buttonPay!!.setOnClickListener {
             if(checkCartTotal !=0 ){
-                btmUpToPay()
+                extras.putDouble("TOTAL_PRICE", passToPay)
+                extras.putString("ACTIVITY", "Ez Snack")
+                extras.putString("USER_ID", refreshID)
+                extras.putString("LOCATION_NAME", stationR)
+                extras.putString("PUMP_ADDRESS", addressR)
+                extras.putDouble("WALLET_BALANCE", walletBalance)
+                extras.putString("USER_PIN", userPin)
+                bottomSheetFragment.arguments = extras
+                bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")
             }else{
                 Toast.makeText(this, getString(R.string.empty_cart), Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    //Enter vehicle plate number
-    private fun btmUpToPay() {
-        val bottomSheetDialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme
-        )
-
-        val bottomSheetView = LayoutInflater.from(applicationContext).inflate(
-            R.layout.activity_charging_plate, findViewById<LinearLayout>(R.id.plateBtmSheet)
-        )
-
-        bottomSheetView.findViewById<View>(R.id.imageViewClosePlate).setOnClickListener{
-            bottomSheetDialog.dismiss()
-        }
-
-        bottomSheetView.findViewById<View>(R.id.buttonToPay).setOnClickListener{
-            extras.putDouble("TOTAL_PRICE", passToPay)
-            extras.putString("ACTIVITY", "Ez Snack")
-            extras.putString("USER_ID", refreshID)
-            extras.putString("LOCATION_NAME", stationR)
-            extras.putString("PUMP_ADDRESS", addressR)
-            extras.putDouble("WALLET_BALANCE", walletBalance)
-            extras.putString("USER_PIN", userPin)
-            val intent = Intent(this, ChargingPinActivity::class.java)
-            intent.putExtras(extras)
-            Toast.makeText(this, "TO PAY", Toast.LENGTH_SHORT).show()
-            startActivity(intent)
-            //startActivity(Intent(this, ChargingPinActivity::class.java))
-        }
-
-        bottomSheetDialog.setContentView(bottomSheetView)
-        bottomSheetDialog.show()
     }
 
     override fun onLoadCartSuccess(cartModelList: List<CartModel>) {

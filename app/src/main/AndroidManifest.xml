@@ -138,18 +138,22 @@
         <activity
             android:name=".Inbox.InboxFragment"
             android:exported="false"
+            android:screenOrientation="portrait"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".Pay_TopUp.PayTopUpFragment"
             android:exported="false"
+            android:screenOrientation="portrait"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".More.MoreFragment"
             android:exported="false"
+            android:screenOrientation="portrait"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".Location.LocationFragment"
             android:exported="false"
+            android:screenOrientation="portrait"
             tools:ignore="Instantiatable" />
 
         <meta-data

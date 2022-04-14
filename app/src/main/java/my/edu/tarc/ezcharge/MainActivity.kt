@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             when{
                 ContextCompat.checkSelfPermission(applicationContext, permission) == PackageManager.PERMISSION_GRANTED -> {
-                    Toast.makeText(applicationContext, "$name permission granted", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(applicationContext, "$name permission granted", Toast.LENGTH_SHORT).show()
                 }
                 shouldShowRequestPermissionRationale(permission) -> showDialog(permission, name, requestCode)
 
@@ -97,9 +97,9 @@ class MainActivity : AppCompatActivity() {
 
         fun innerCheck(name: String){
             if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(applicationContext, "$name permission granted", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(applicationContext, "$name permission granted", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(applicationContext, "$name permission granted", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(applicationContext, "$name permission granted", Toast.LENGTH_SHORT).show()
             }
         }
 

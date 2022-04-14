@@ -85,7 +85,7 @@ class ChargingPumpActivity : AppCompatActivity() {
         val cal = Calendar.getInstance()
 
         //Retrieve scan item from item with view model
-            pumpItemViewModel.getScanItem(itemCode).observe(this, { itemList ->
+            pumpItemViewModel.getScanItem(itemCode).observe(this) { itemList ->
                 itemList?.let {
                     val items = itemList.toString()
                     val itemsFilter1 = items.replace("[PumpItem(Pump_ID=", "")
@@ -93,8 +93,8 @@ class ChargingPumpActivity : AppCompatActivity() {
                     val itemsFilter3 = itemsFilter2.replace("Pump_No=", "")
                     val itemsFilter4 = itemsFilter3.replace("Pump_Type=", "")
                     val itemsFilter5 = itemsFilter4.replace("Pump_Address=", "")
-                    val itemsFilter6 = itemsFilter5.replace(")]","")
-                    val itemsFilter7 = itemsFilter6.replace(" ","")
+                    val itemsFilter6 = itemsFilter5.replace(")]", "")
+                    val itemsFilter7 = itemsFilter6.replace(" ", "")
                     val itemArrayNice: List<String> = itemsFilter6.split(",")
                     val itemArray: List<String> = itemsFilter7.split(",")
 
@@ -111,32 +111,26 @@ class ChargingPumpActivity : AppCompatActivity() {
                     stationName.text = stationNameR
                     stationPumpNo.text = itemArray[2]
 
-                    passName = stationNameR
+                    //Format spacing
+                    if (stationNameR == " Ez Charge Wangsa Maju") {
+                        passName = "Ez Charge Wangsa Maju"
+                    } else if (stationNameR == " Ez Charge Taman Bunga Raya") {
+                        passName = "Ez Charge Taman Bunga Raya"
+                    } else if (stationNameR == " Ez Charge Danau Kota") {
+                        passName = "Ez Charge Danau Kota"
+                    } else if (stationNameR == " Ez Charge Ampang Jaya") {
+                        passName = "Ez Charge Ampang Jaya"
+                    } else if (stationNameR == " Ez Charge Setiawangsa") {
+                        passName = "Ez Charge Setiawangsa"
+                    } else if (stationNameR == " Ez Charge City Centre") {
+                        passName = "Ez Charge City Centre"
+                    }
+                    //passName = stationNameR
                     passPumpNo = stationPumpR
                     passAddress = stationAddressR
 
-//                when(stationCableR) {
-//                    "universal" -> {
-//                        radioButtonType1.setBackgroundResource(R.drawable.chademo)
-//                        radioButtonType2.setBackgroundResource(R.drawable.ccs)
-//                        radioButtonType3.setBackgroundResource(R.drawable.gbt)
-//                        radioButtonType4.setBackgroundResource(R.drawable.menkenes)
-//                    }
-//                    "multi" -> {
-//                        radioButtonType1.setBackgroundResource(R.drawable.chademo)
-//                        radioButtonType2.setBackgroundResource(R.drawable.chademo)
-//                        radioButtonType3.setBackgroundResource(R.drawable.chademo)
-//                        radioButtonType4.setBackgroundResource(R.drawable.chademo)
-//                    }
-//                    "many" -> {
-//                        radioButtonType1.setBackgroundResource(R.drawable.chademo)
-//                        radioButtonType2.setBackgroundResource(R.drawable.chademo)
-//                        radioButtonType3.setBackgroundResource(R.drawable.chademo)
-//                        radioButtonType4.setBackgroundResource(R.drawable.chademo)
-//                    }
-//                }
                 }
-            })
+            }
 
         cal.time = d
         cal.add(Calendar.MINUTE, addTime)

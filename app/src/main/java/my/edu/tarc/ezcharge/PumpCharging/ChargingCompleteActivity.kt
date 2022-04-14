@@ -10,6 +10,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 import my.edu.tarc.ezcharge.MainActivity
+import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingCompleteBinding
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
@@ -80,6 +81,20 @@ class ChargingCompleteActivity : AppCompatActivity() {
         binding.textViewLocation.text = stationName.toString()
         binding.textViewReceiptDateResult.text = currentDate
         binding.textViewLocationAddr.text = passAddress
+
+        if(stationName == "Ez Charge Wangsa Maju"){
+            binding.imageViewLocationImage.setImageResource(R.drawable.wangsanew)
+        }else if(stationName == "Ez Charge Taman Bunga Raya"){
+            binding.imageViewLocationImage.setImageResource(R.drawable.tbrnew)
+        }else if(stationName == "Ez Charge Danau Kota"){
+            binding.imageViewLocationImage.setImageResource(R.drawable.danaunew)
+        }else if(stationName == "Ez Charge Ampang Jaya"){
+            binding.imageViewLocationImage.setImageResource(R.drawable.ampangnew)
+        }else if(stationName == "Ez Charge Setiawangsa"){
+            binding.imageViewLocationImage.setImageResource(R.drawable.setianew)
+        }else if(stationName == "Ez Charge City Centre"){
+            binding.imageViewLocationImage.setImageResource(R.drawable.citynew)
+        }
 
         binding.textViewWalletBalance.text = String.format("RM %.2f", walletAmount)
         //binding.textViewEzChargeNoResult.text = ezChargeCardNo

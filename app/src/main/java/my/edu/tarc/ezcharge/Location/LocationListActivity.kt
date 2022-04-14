@@ -35,7 +35,9 @@ class LocationListActivity : AppCompatActivity() {
         userArrayList = arrayListOf<Location>()
         getUserData()
 
-
+        binding.backToMain.setOnClickListener {
+            finish()
+        }
     }
 
 

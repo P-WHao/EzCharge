@@ -82,7 +82,7 @@
     <!--    Charging Pin String-->
     <string name="charging_pin">Please enter your 6 digits PIN.</string>
     <string name="pin_not_match">PIN not match please try again</string>
-    <string name="insufficient_money">Insufficient Money, please top-up</string>
+    <string name="insufficient_money">Insufficient Money, please top-up first</string>
     <string name="charging_pin_enter">Enter PIN To Continue</string>
 
     <!--    Charging Status String-->
@@ -110,7 +110,7 @@
 
     <!--    Charging EzSnack String-->
     <string name="charging_ezsnack">EzSnack</string>
-    <string name="charging_ezsnack_location">Get Station Kepong items delivered to you</string>
+    <string name="charging_ezsnack_location">Get Ez Snack items delivered to you</string>
     <string name="charging_viewCart">VIEW CART</string>
 
     <!--    Charging EzSnack String-->
@@ -121,7 +121,7 @@
 
     <!--    Charging Plate Enter String-->
     <string name="charging_plate_enter">Vehicle Plate Number</string>
-    <string name="charging_plate_tips">Please provide your vehicle plate number so we can deliver your purchases to you.</string>
+    <string name="charging_plate_tips">Please provide your vehicle plate number (without space) so we can deliver your purchases to you.</string>
     <string name="charging_plate_hints">Enter Your Plate Number</string>
 
     <!--    News-->

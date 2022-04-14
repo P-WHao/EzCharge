@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
+import my.edu.tarc.ezcharge.MainActivity
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingPinBinding
 
@@ -192,8 +193,10 @@ class ChargingPinActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
             } else {
-                Toast.makeText(this, getString(R.string.insufficient_money), Toast.LENGTH_SHORT)
+                Toast.makeText(this, getString(R.string.insufficient_money), Toast.LENGTH_LONG)
                     .show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             }
         } else {
             Toast.makeText(this, getString(R.string.pin_not_match), Toast.LENGTH_SHORT).show()
