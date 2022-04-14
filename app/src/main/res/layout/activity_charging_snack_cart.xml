@@ -16,25 +16,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/btnClose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:minWidth="20dp"
+                android:minHeight="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_close_24" />
+                app:srcCompat="@drawable/ic_baseline_close_24"
+                android:background="@android:color/transparent"
+                app:tint="@color/black"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/charging_ezsnack_cartTitle"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp"
+                android:text="@string/charging_ezsnack_cartTitle"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
     </LinearLayout>
@@ -44,7 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="480dp"
         android:layout_below="@+id/viewTitle"
-        android:padding="8dp" />
+        android:padding="8dp"
+        tools:listitem="@layout/layout_cart_item" />
 
     <View
         android:id="@+id/divider10"

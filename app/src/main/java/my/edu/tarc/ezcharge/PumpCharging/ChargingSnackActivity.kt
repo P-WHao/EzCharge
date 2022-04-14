@@ -129,6 +129,7 @@ class ChargingSnackActivity : AppCompatActivity(), IDrinkLoadListener, ICartLoad
         drinkLoadListener = this
         cartLoadListener = this
 
+        //Display 2 column
         val gridLayoutManager = GridLayoutManager(this, 2)
         recycler_drinks.layoutManager = gridLayoutManager
         //recycler_drinks.addItemDecoration(SpaceItemDecoration())

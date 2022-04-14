@@ -38,7 +38,6 @@ import org.greenrobot.eventbus.ThreadMode
 
 class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
     private lateinit var binding: ActivityChargingSnackCartBinding
-    private lateinit var binding1: ActivityChargingPlateBinding
 
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -92,7 +91,6 @@ class ChargingSnackCartActivity : AppCompatActivity(), ICartLoadListener {
         userPin = userPin1
 
         binding = ActivityChargingSnackCartBinding.inflate(layoutInflater)
-        binding1 = ActivityChargingPlateBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 

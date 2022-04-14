@@ -70,7 +70,8 @@
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:layout_below="@+id/ezsnackLocation"
-        android:padding="10dp" />
+        android:padding="10dp"
+        tools:listitem="@layout/layout_drink_item"/>
 
     <LinearLayout
         android:id="@+id/ezsnackCart"
