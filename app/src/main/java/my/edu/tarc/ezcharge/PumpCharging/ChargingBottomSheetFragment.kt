@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.activity_charging_btm_plate.*
+import kotlinx.android.synthetic.main.fragment_inbox.*
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingBtmPlateBinding
 import java.util.regex.Pattern
@@ -56,12 +57,18 @@ class ChargingBottomSheetFragment: BottomSheetDialogFragment() {
             userPin = userPin1
         }
 
+
+
         //return inflater.inflate(R.layout.activity_charging_btm_plate, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+//        binding.imageViewClosePlate.setOnClickListener {
+//
+//        }
 
         buttonToPay.setOnClickListener {
             when{
