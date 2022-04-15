@@ -24,7 +24,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
     //private val userID = "HELLO"
     //private val stationR = "KL"
     private var addressR = ""
-    private val walletBalance = 100.00
+    private val walletBalance = 200.00
     private val ezChargeCardNo = "WOOWOWOWOW"
     //private val userPin = "111123"
 
