@@ -18,11 +18,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
         <activity
+            android:name=".PumpCharging.ChargingHistoryDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".PumpCharging.ChargingHistoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+        <activity
             android:name=".PumpCharging.ChargingHistoryActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.EzCharge.NoActionBar"
-            android:parentActivityName=".More.MoreFragment"/>
+            android:parentActivityName=".More.MoreFragment"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Location.LocationListActivity"
             android:exported="false"
@@ -76,12 +81,6 @@
         <activity
             android:name=".Inbox.NewsActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.EzCharge.NoActionBar" />
-        <activity
-            android:name=".PumpCharging.ChargingPlateActivity"
-            android:exported="false"
-            android:parentActivityName=".PumpCharging.ChargingSnackCartActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity

@@ -101,6 +101,7 @@ class ChargingCompleteActivity : AppCompatActivity() {
 
         binding.imageViewCloseButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("Login","1")
             startActivity(intent)
         }
     }

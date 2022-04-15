@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="10dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -39,6 +39,14 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/inboxTitle" />
+        android:layout_below="@+id/divider13" />
+
+    <View
+        android:id="@+id/divider13"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/inboxTitle"
+        android:layout_marginBottom="5dp"
+        android:background="?android:attr/listDivider" />
 
 </RelativeLayout>

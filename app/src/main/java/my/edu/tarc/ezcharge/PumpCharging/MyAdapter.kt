@@ -6,13 +6,24 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import my.edu.tarc.ezcharge.R
+import my.edu.tarc.ezcharge.adapter.MyNewsAdapter
 
 class MyAdapter(private val histList : ArrayList<HistoryCharge>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.history_item, parent, false)
-        return MyViewHolder(itemView)
+        return MyViewHolder(itemView,mListener)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -29,14 +40,18 @@ class MyAdapter(private val histList : ArrayList<HistoryCharge>) : RecyclerView.
         return histList.size
     }
 
-    class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView : View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
 
         val histTypes : TextView = itemView.findViewById(R.id.histTypes)
         val locationCharge : TextView = itemView.findViewById(R.id.location)
         val types : TextView = itemView.findViewById(R.id.types)
         val pay : TextView = itemView.findViewById(R.id.pay)
         val timedateuser : TextView = itemView.findViewById(R.id.date)
+
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+        }
     }
-
-
 }

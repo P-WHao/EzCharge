@@ -39,9 +39,11 @@ class NewsActivity : AppCompatActivity() {
         binding.newsButton.setOnClickListener {
             if(continueButton == "FUEL UP NOW"){
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("Login","1")
                 startActivity(intent)
             }else if(continueButton == "VERIFY NOW"){
                 val intent = Intent(this, MainActivity::class.java) //change to profile activity
+                intent.putExtra("Login","1")
                 startActivity(intent)
             }else if(continueButton == "VISIT"){
                 //Implicit Intent - to view a web page
