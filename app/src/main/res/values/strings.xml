@@ -82,7 +82,7 @@
     <!--    Charging Pin String-->
     <string name="charging_pin">Please enter your 6 digits PIN.</string>
     <string name="pin_not_match">PIN not match please try again</string>
-    <string name="insufficient_money">Insufficient Money, please top-up first</string>
+    <string name="insufficient_money">Insufficient Money, please top-up at least RM 200.00 first</string>
     <string name="charging_pin_enter">Enter PIN To Continue</string>
 
     <!--    Charging Status String-->
@@ -209,7 +209,7 @@
     <string name="hist_ezTypes">Type</string>
     <string name="hist_types">Transaction Type</string>
     <string name="hist_status">Status</string>
-    <string name="hist_trans">Transaction No.</string>
+    <string name="hist_trans">Payment Method</string>
 
     <!--    JS-->
     <string name="nocode">Didn\'t get OTP? <b>Resend</b></string>

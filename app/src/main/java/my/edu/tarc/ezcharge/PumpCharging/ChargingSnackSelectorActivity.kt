@@ -24,7 +24,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
     //private val userID = "HELLO"
     //private val stationR = "KL"
     private var addressR = ""
-    private val walletBalance = 200.00
+    private val walletBalance = 100.00
     private val ezChargeCardNo = "WOOWOWOWOW"
     //private val userPin = "111123"
 
@@ -114,25 +114,38 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
         }
 
         binding.buttonToCharge.setOnClickListener {
-            extras.putDouble("WALLET_BALANCE", walletBalance)
-            extras.putString("USER_ID", userUID)
-            extras.putString("USER_PIN", userPass)
-            val intent = Intent(this, ChargingGuidelinesActivity::class.java)
-            intent.putExtras(extras)
-            Toast.makeText(this, "Ready To Recharge", Toast.LENGTH_SHORT).show()
-            startActivity(intent)
+
+            if(walletBalance >= 200.00){
+                extras.putDouble("WALLET_BALANCE", walletBalance)
+                extras.putString("USER_ID", userUID)
+                extras.putString("USER_PIN", userPass)
+                val intent = Intent(this, ChargingGuidelinesActivity::class.java)
+                intent.putExtras(extras)
+                Toast.makeText(this, "Ready To Recharge", Toast.LENGTH_SHORT).show()
+                startActivity(intent)
+            }else{
+                val intent = Intent(this, MainActivity::class.java) //To Top Up (NEED CHANGE)
+                Toast.makeText(this, getString(R.string.insufficient_money), Toast.LENGTH_LONG).show()
+                startActivity(intent)
+            }
         }
 
         binding.buttonToBuySnack.setOnClickListener {
-            extras.putString("USER_ID", userUID)
-            extras.putString("LOCATION_NAME", stationR)
-            extras.putString("PUMP_ADDRESS", addressR)
-            extras.putDouble("WALLET_BALANCE", walletBalance)
-            extras.putString("USER_PIN", userPass)
-            val intent = Intent(this, ChargingSnackActivity::class.java)
-            intent.putExtras(extras)
-            Toast.makeText(this, "Get Some Snack", Toast.LENGTH_SHORT).show()
-            startActivity(intent)
+            if(walletBalance >= 200.00){
+                extras.putString("USER_ID", userUID)
+                extras.putString("LOCATION_NAME", stationR)
+                extras.putString("PUMP_ADDRESS", addressR)
+                extras.putDouble("WALLET_BALANCE", walletBalance)
+                extras.putString("USER_PIN", userPass)
+                val intent = Intent(this, ChargingSnackActivity::class.java)
+                intent.putExtras(extras)
+                Toast.makeText(this, "Get Some Snack", Toast.LENGTH_SHORT).show()
+                startActivity(intent)
+            }else{
+                val intent = Intent(this, MainActivity::class.java) //To Top Up (NEED CHANGE)
+                Toast.makeText(this, getString(R.string.insufficient_money), Toast.LENGTH_LONG).show()
+                startActivity(intent)
+            }
         }
     }
 }

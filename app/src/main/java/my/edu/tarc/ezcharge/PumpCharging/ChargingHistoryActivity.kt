@@ -80,6 +80,14 @@ class ChargingHistoryActivity : AppCompatActivity() {
                     historyArrayList.forEach{
                         if(it.histtypes!!.lowercase(Locale.getDefault()).contains(searchText)){
                             tempArrayList.add(it)
+                        }else if(it.location!!.lowercase(Locale.getDefault()).contains(searchText)){
+                            tempArrayList.add(it)
+                        }else if(it.pay!!.lowercase(Locale.getDefault()).contains(searchText)){
+                            tempArrayList.add(it)
+                        }else if(it.timedate!!.lowercase(Locale.getDefault()).contains(searchText)){
+                            tempArrayList.add(it)
+                        }else if(it.types!!.lowercase(Locale.getDefault()).contains(searchText)){
+                            tempArrayList.add(it)
                         }
                     }
 
@@ -124,7 +132,6 @@ class ChargingHistoryActivity : AppCompatActivity() {
                             extras.putString("CONNECT_TYPES", historyArrayList[position].types)
                             extras.putString("PAY", historyArrayList[position].pay)
                             extras.putString("TIME_DATE", historyArrayList[position].timedate)
-                            extras.putInt("POSITION", position)
                             intent.putExtras(extras)
                             startActivity(intent)
                         }

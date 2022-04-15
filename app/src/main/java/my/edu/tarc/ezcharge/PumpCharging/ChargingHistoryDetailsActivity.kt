@@ -11,7 +11,6 @@ class ChargingHistoryDetailsActivity : AppCompatActivity() {
 
     val extras = Bundle()
 
-    var receiptNo = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +25,6 @@ class ChargingHistoryDetailsActivity : AppCompatActivity() {
         val types = extras!!.getString("CONNECT_TYPES", "")
         val pay = extras!!.getString("PAY", "")
         val timeDate = extras!!.getString("TIME_DATE", "")
-        val position = extras!!.getInt("POSITION", 0)
-
-        receiptNo += position+1
 
         binding.textView15.text = String.format("-RM" + pay + "0")
         binding.textView20.text = histTypes.toString()
@@ -42,7 +38,7 @@ class ChargingHistoryDetailsActivity : AppCompatActivity() {
         binding.textView23.text = timeDate.toString()
         binding.textView25.text = "Successful"
 
-        binding.textView27.text = receiptNo.toString()
+        binding.textView27.text = "ezWallet Balance"
 
         binding.backToHistBtn1.setOnClickListener {
             finish()

@@ -196,6 +196,7 @@ class ChargingPinActivity : AppCompatActivity() {
                 Toast.makeText(this, getString(R.string.insufficient_money), Toast.LENGTH_LONG)
                     .show()
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("Login","1")
                 startActivity(intent)
             }
         } else {
