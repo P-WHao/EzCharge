@@ -231,9 +231,9 @@ class ChargingPinActivity : AppCompatActivity() {
             //Total Wallte Balance
             val refTotal = FirebaseDatabase.getInstance().getReference("TopUpTotal")
             refTotal.child(userID!!).setValue(TopUp1).addOnSuccessListener {
-                Toast.makeText(this,"Top-Up Successfully!", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"Top-Up Successfully!", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
-                Toast.makeText(this,"Top-Up Failed! Please Try Again", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"Top-Up Failed! Please Try Again", Toast.LENGTH_SHORT).show()
             }
 
             val intent = Intent(this, MainActivity::class.java)
