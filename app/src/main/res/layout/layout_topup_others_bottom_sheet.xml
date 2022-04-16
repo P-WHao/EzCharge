@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/topupOthersBtmSheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/btm_sheet_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="Top-up amount"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/darker_gray"
+        android:textAlignment="center" />
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="102dp"-->
+<!--        app:errorEnabled="true">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/editTextTopupAmount2"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_gravity="center|center_horizontal"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:autofillHints=""-->
+<!--            android:background="@null"-->
+<!--            android:backgroundTint="#FFFFFF"-->
+<!--            android:cursorVisible="false"-->
+<!--            android:ems="10"-->
+<!--            android:gravity="center"-->
+<!--            android:hint="@string/topup_amount_hint"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            android:minHeight="48dp"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="34sp" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <EditText
+        android:id="@+id/editTextTopupAmountTry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:cursorVisible="false"
+        android:ems="10"
+        android:hint="@string/topup_amount_hint"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Minimum is RM10 and maximum is RM300"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/buttonTopupAmountTry"
+        android:enabled="false"
+        android:layout_width="346dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:text="Continue" />
+
+
+</LinearLayout>

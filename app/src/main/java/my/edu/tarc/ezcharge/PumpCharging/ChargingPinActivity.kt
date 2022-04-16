@@ -1,15 +1,21 @@
 package my.edu.tarc.ezcharge.PumpCharging
 import android.app.ProgressDialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 import my.edu.tarc.ezcharge.MainActivity
+import my.edu.tarc.ezcharge.Pay_TopUp.TopUp
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingPinBinding
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 lateinit var progressDialog1: ProgressDialog
 
@@ -171,6 +177,7 @@ class ChargingPinActivity : AppCompatActivity() {
             if (walletAmount >= totalPay) {
                 //Need deduce then add into firebase
                 walletAmount -= totalPay
+                updateWalletAmount()
                 if (activity == "Charge") { //if null then view go to charging progress bar
                     Toast.makeText(this, "Paid", Toast.LENGTH_SHORT).show()
                     //Pass Value
@@ -213,24 +220,24 @@ class ChargingPinActivity : AppCompatActivity() {
     }
 
     //Need add
-    private fun addRecordToFirebase() {
-        progressDialog1.show()
+    private fun updateWalletAmount() {
+        //To get Formatted Date Format
+            val getTopupType = "NTG"
+            val getTopupAmount = walletAmount
+            val getTopupDate = "NTG"
 
-        val hashMap = HashMap<String, Any>()
+            val TopUp1 = TopUp(getTopupType,getTopupAmount,getTopupDate)
 
-        hashMap["walletamount"] = walletAmount
-
-        val ref = FirebaseDatabase.getInstance().getReference("ChargeHis")
-        ref.child(userID!!)
-            .setValue(hashMap)
-            .addOnSuccessListener {
-                progressDialog1.dismiss()
-                //Toast.makeText(this,"Pin added successfully!", Toast.LENGTH_SHORT).show()
+            //Total Wallte Balance
+            val refTotal = FirebaseDatabase.getInstance().getReference("TopUpTotal")
+            refTotal.child(userID!!).setValue(TopUp1).addOnSuccessListener {
+                Toast.makeText(this,"Top-Up Successfully!", Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener {
+                Toast.makeText(this,"Top-Up Failed! Please Try Again", Toast.LENGTH_SHORT).show()
             }
 
-            .addOnFailureListener { e->
-                progressDialog1.dismiss()
-                //Toast.makeText(this,"Failed to add due to ${e.message}", Toast.LENGTH_SHORT).show()
-            }
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("Login","1")
+            startActivity(intent)
     }
 }

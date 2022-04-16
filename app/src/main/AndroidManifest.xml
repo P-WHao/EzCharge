@@ -12,17 +12,52 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_baseline_one"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_baseline_one_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EzCharge">
+        <activity
+            android:name=".Rewards.RewardDisplayNewsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+        <activity
+            android:name=".Rewards.RewardStoreActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+        <activity
+            android:name=".Pay_TopUp.CreditCardForm"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".Pay_TopUp.VoucherTopupActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".Pay_TopUp.AutoTopupActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".Pay_TopUp.TopupHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
+        <activity
+            android:name=".Pay_TopUp.TopupActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".PumpCharging.ChargingHistoryDetailsActivity"
             android:exported="false"
             android:parentActivityName=".PumpCharging.ChargingHistoryActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.EzCharge.NoActionBar"/>
+            android:theme="@style/Theme.EzCharge.NoActionBar" />
         <activity
             android:name=".PumpCharging.ChargingHistoryActivity"
             android:exported="false"
@@ -162,8 +197,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.EzCharge.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EzCharge.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

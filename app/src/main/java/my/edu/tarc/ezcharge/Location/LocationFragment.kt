@@ -21,12 +21,14 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import my.edu.tarc.ezcharge.PumpCharging.*
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.FragmentLocationBinding
 import my.edu.tarc.ezcharge.databinding.LayoutDrinkItemBinding
+
+private lateinit var firebaseAuth: FirebaseAuth
 
 class LocationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     //Location Items
@@ -72,6 +74,11 @@ class LocationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClick
     //val EzCharge2 = LatLng(3.215155, 101.729247)
     //val EzCharge3 = LatLng(3.201750, 101.717668)
 
+    var tempUID = ""
+    private var userUID = ""
+    private lateinit var dbref : DatabaseReference
+    private var sumTotal = 0.00
+
     companion object {
         private const val LOCATION_REQUEST_CODE = 1
     }
@@ -101,6 +108,29 @@ class LocationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClick
 
         }
 
+        //init firebase
+        firebaseAuth = FirebaseAuth.getInstance()
+        tempUID = firebaseAuth.uid.toString()
+        userUID = tempUID
+
+        dbref = FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("TopUpTotal")
+
+        dbref.child(userUID)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val sum = snapshot.child("topupAmount").getValue(Double::class.java)
+                    if (sum != null) {
+                        sumTotal = sum
+                    }
+                    binding.btnGoProfile.text = String.format("RM %.2f", sumTotal)
+                    sumTotal = sumTotal
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    throw error.toException()
+                }
+
+            })
         return binding.root
     }
 

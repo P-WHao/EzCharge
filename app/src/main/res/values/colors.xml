@@ -38,6 +38,7 @@
     <color name="gray01">#c5c5c5</color>
     <color name="gray02">#777777</color>
     <color name="blue01">#29a3e6</color>
+    <color name="color_primary_dark">#211060</color>
 
 
 </resources>

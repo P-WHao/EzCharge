@@ -7,10 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import my.edu.tarc.ezcharge.MainActivity
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingSnackSelectorBinding
@@ -24,7 +21,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
     //private val userID = "HELLO"
     //private val stationR = "KL"
     private var addressR = ""
-    private val walletBalance = 200.00
+    private var walletBalance = 0.00
     private val ezChargeCardNo = "WOOWOWOWOW"
     //private val userPin = "111123"
 
@@ -32,6 +29,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
     var userPass = ""
     var userUID = ""
     var userUIDFirst = ""
+    private lateinit var dbref : DatabaseReference
 
     //Share Preferences
     lateinit var sharedPreferences: SharedPreferences
@@ -68,8 +66,6 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
 
         val ref = FirebaseDatabase.getInstance().getReference("Users")
 
-        //Get Wallet Balance
-
         //Get USER_PIN
         val userPin = FirebaseDatabase.getInstance().getReference("Pin")
         if (firebaseUser != null) {
@@ -86,6 +82,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
             }
         })
 
+        //Get current ID
         ref.child(userUIDFirst)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -98,6 +95,26 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
                 }
             })
 
+        //Get Wallet Balance
+        dbref = FirebaseDatabase.getInstance("https://ezchargeassignment-default-rtdb.firebaseio.com/").getReference("TopUpTotal")
+
+        dbref.child(userUIDFirst)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val sum = snapshot.child("topupAmount").getValue(Double::class.java)
+                    if (sum != null) {
+                        walletBalance = sum
+                    }
+                    //binding.textViewMainBalance.text = String.format("RM%.2f",sumTotal)
+                    //sumTotal = sumTotal
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    throw error.toException()
+                }
+
+
+            })
 
 //        //Shared Preferences to get ezcharge card number
 //        preferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE)

@@ -32,7 +32,7 @@ class MyAdapter(private val histList : ArrayList<HistoryCharge>) : RecyclerView.
         holder.histTypes.text = currentitem.histtypes
         holder.locationCharge.text = currentitem.location
         holder.types.text = currentitem.types
-        holder.pay.text = String.format("-RM %.2f",currentitem.pay)
+        holder.pay.text = "-RM " + currentitem.pay + "0"
         holder.timedateuser.text = currentitem.timedate
     }
 
