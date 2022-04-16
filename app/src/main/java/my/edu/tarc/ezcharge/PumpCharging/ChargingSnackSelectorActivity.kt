@@ -142,6 +142,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
                 startActivity(intent)
             }else{
                 val intent = Intent(this, MainActivity::class.java) //To Top Up (NEED CHANGE)
+                intent.putExtra("Login","1")
                 Toast.makeText(this, getString(R.string.insufficient_money), Toast.LENGTH_LONG).show()
                 startActivity(intent)
             }
@@ -160,6 +161,7 @@ class ChargingSnackSelectorActivity : AppCompatActivity() {
                 startActivity(intent)
             }else{
                 val intent = Intent(this, MainActivity::class.java) //To Top Up (NEED CHANGE)
+                intent.putExtra("Login","1")
                 Toast.makeText(this, getString(R.string.insufficient_money), Toast.LENGTH_LONG).show()
                 startActivity(intent)
             }
