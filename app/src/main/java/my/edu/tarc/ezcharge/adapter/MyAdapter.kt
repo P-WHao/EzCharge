@@ -1,12 +1,12 @@
-package my.edu.tarc.ezcharge.PumpCharging
+package my.edu.tarc.ezcharge.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import my.edu.tarc.ezcharge.Data.Entity.HistoryCharge
 import my.edu.tarc.ezcharge.R
-import my.edu.tarc.ezcharge.adapter.MyNewsAdapter
 
 class MyAdapter(private val histList : ArrayList<HistoryCharge>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
@@ -32,7 +32,7 @@ class MyAdapter(private val histList : ArrayList<HistoryCharge>) : RecyclerView.
         holder.histTypes.text = currentitem.histtypes
         holder.locationCharge.text = currentitem.location
         holder.types.text = currentitem.types
-        holder.pay.text = "-RM " + currentitem.pay + "0"
+        holder.pay.text = String.format("-RM %.2f",currentitem.pay)
         holder.timedateuser.text = currentitem.timedate
     }
 

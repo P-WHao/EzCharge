@@ -1,24 +1,16 @@
 package my.edu.tarc.ezcharge.PumpCharging
 
-import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
-import my.edu.tarc.ezcharge.Inbox.NewsActivity
+import my.edu.tarc.ezcharge.Data.Entity.HistoryCharge
 import my.edu.tarc.ezcharge.R
-import my.edu.tarc.ezcharge.adapter.MyNewsAdapter
-import my.edu.tarc.ezcharge.eventbus.UpdateCartEvent
-import org.greenrobot.eventbus.EventBus
+import my.edu.tarc.ezcharge.adapter.MyAdapter
 import java.util.*
 import kotlin.collections.ArrayList
 

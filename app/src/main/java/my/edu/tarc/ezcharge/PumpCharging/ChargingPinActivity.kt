@@ -1,5 +1,5 @@
 package my.edu.tarc.ezcharge.PumpCharging
-
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -10,6 +10,8 @@ import com.google.firebase.database.FirebaseDatabase
 import my.edu.tarc.ezcharge.MainActivity
 import my.edu.tarc.ezcharge.R
 import my.edu.tarc.ezcharge.databinding.ActivityChargingPinBinding
+
+lateinit var progressDialog1: ProgressDialog
 
 class ChargingPinActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChargingPinBinding
@@ -53,6 +55,11 @@ class ChargingPinActivity : AppCompatActivity() {
 
         //get the attached bundle from the intent
         val extras = intent.extras
+
+        //configure progress dialog
+        progressDialog1 = ProgressDialog(this)
+        progressDialog1.setTitle("Please wait")
+        progressDialog1.setCanceledOnTouchOutside(false)
 
         //Extracting the stored data from the bundle
         activity = extras!!.getString("ACTIVITY")
@@ -162,6 +169,7 @@ class ChargingPinActivity : AppCompatActivity() {
     private fun matchPassCode() {
         if (passcode == userPin) { //Here need to integrate with user pin
             if (walletAmount >= totalPay) {
+                //Need deduce then add into firebase
                 walletAmount -= totalPay
                 if (activity == "Charge") { //if null then view go to charging progress bar
                     Toast.makeText(this, "Paid", Toast.LENGTH_SHORT).show()
@@ -202,5 +210,27 @@ class ChargingPinActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, getString(R.string.pin_not_match), Toast.LENGTH_SHORT).show()
         }
+    }
+
+    //Need add
+    private fun addRecordToFirebase() {
+        progressDialog1.show()
+
+        val hashMap = HashMap<String, Any>()
+
+        hashMap["walletamount"] = walletAmount
+
+        val ref = FirebaseDatabase.getInstance().getReference("ChargeHis")
+        ref.child(userID!!)
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                progressDialog1.dismiss()
+                //Toast.makeText(this,"Pin added successfully!", Toast.LENGTH_SHORT).show()
+            }
+
+            .addOnFailureListener { e->
+                progressDialog1.dismiss()
+                //Toast.makeText(this,"Failed to add due to ${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 }
