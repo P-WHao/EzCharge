@@ -259,16 +259,18 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioGroupConnector"
                     android:layout_marginStart="15dp"
-                    android:text="CHAdeMo" />
+                    android:text="CHAdeMo"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/secondConnect"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/firstConnect"
                     android:layout_below="@+id/radioGroupConnector"
                     android:layout_marginStart="30dp"
-                    android:text="CCS1" />
+                    android:layout_toEndOf="@+id/firstConnect"
+                    android:text="CCS1"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/thirdConnect"
@@ -277,7 +279,8 @@
                     android:layout_toEndOf="@+id/secondConnect"
                     android:layout_below="@+id/radioGroupConnector"
                     android:layout_marginStart="40dp"
-                    android:text="GB/T" />
+                    android:text="GB/T"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/fourthConnect"
@@ -286,7 +289,8 @@
                     android:layout_toEndOf="@+id/thirdConnect"
                     android:layout_below="@+id/radioGroupConnector"
                     android:layout_marginStart="25dp"
-                    android:text="Menneskes" />
+                    android:text="Menneskes"
+                    android:textColor="@color/black"/>
 
 
             </RelativeLayout>
