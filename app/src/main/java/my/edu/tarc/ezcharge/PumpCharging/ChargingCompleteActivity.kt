@@ -71,6 +71,7 @@ class ChargingCompleteActivity : AppCompatActivity() {
         if(types == "Ez Snack"){
             getTime()
             addRecordToFirebase()
+            binding.textView2.text = "Receipt"
         }
 
         binding.textViewProduct.text = types
