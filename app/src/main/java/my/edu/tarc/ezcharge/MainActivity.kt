@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         checkForPermissions(android.Manifest.permission.CAMERA, "camera", CAMERA_REQUEST_CODE)
         checkForPermissions(android.Manifest.permission.ACCESS_FINE_LOCATION, "location", FINE_LOCATION_RQ)
 
-        //when user open app
+        //when user open the app
         //add (use intent to check whether user login)
         login = intent.getStringExtra("Login").toString()
 
